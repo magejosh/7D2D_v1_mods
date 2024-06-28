@@ -10,6 +10,7 @@ Provides a template settings file that uses XPath to configure the desired 0-SCo
 
 **This modlet requires version `1.0.1.1224` of the `0-SCore` modlet.**
 Earlier versions will not work!
+You can find 0-SCore here: https://github.com/SphereII/SphereII.Mods/tree/1.0e
 
 ## Technical Details
 
