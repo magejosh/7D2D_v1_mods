@@ -1,0 +1,756 @@
+<configs>
+
+
+
+		<!-- <effect_group>
+			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffIsOnFire"/>
+
+			<passive_effect name="HealthChangeOT" operation="base_subtract" value="1.5"/>
+			<passive_effect name="WaterChangeOT" operation="base_subtract" value="2"/>
+			<passive_effect name="HypothermalResist" operation="base_add" value="30"/>
+			<passive_effect name="HyperthermalResist" operation="base_add" value="-10"/>
+		</effect_group> -->
+
+
+
+	<append xpath="/buffs">
+
+	<buff name="buffFireProtection" hidden="true"> 
+		<stack_type value="ignore"/>
+		<duration value="0"/>
+
+		<effect_group>
+			<requirement name="!HasBuff" buff="god"/>
+			<requirement name="HasBuff" buff="buffFireProxFXlight"/>
+				<passive_effect name="HealthChangeOT" operation="base_add" value=".5"/>
+				<passive_effect name="WaterChangeOT" operation="base_add" value="1"/>
+		</effect_group>
+
+		<effect_group>
+			<requirement name="!HasBuff" buff="god"/>
+			<requirement name="HasBuff" buff="buffFireProxFXmed"/>
+				<passive_effect name="HealthChangeOT" operation="base_add" value="1"/>
+				<passive_effect name="WaterChangeOT" operation="base_add" value="1.5"/>
+		</effect_group>
+
+		<effect_group>
+			<requirement name="!HasBuff" buff="god"/>
+			<requirement name="HasBuff" buff="buffFireProxFXheavy"/>
+				<passive_effect name="HealthChangeOT" operation="base_add" value="1.5"/>
+				<passive_effect name="WaterChangeOT" operation="base_add" value="2"/>
+		</effect_group>
+
+		<effect_group>
+			<requirement name="!HasBuff" buff="god"/>
+				<passive_effect name="HypothermalResist" operation="base_add" value="30"/>
+				<passive_effect name="HyperthermalResist" operation="base_add" value="30"/>
+		</effect_group>
+
+	</buff>
+
+	<buff name="buffFireProxTracker" hidden="true"> 
+		<stack_type value="ignore"/>
+		<duration value="0"/>
+		<update_rate value="2"/>
+		<effect_group>
+			<!-- <triggered_effect trigger="onSelfBuffUpdate" action="CheckFireProximity, SCore" range="5"  /> -->
+			<triggered_effect trigger="onSelfBuffUpdate" action="CheckFireProximity, SCore" range="4"  cvar="_closeFires" />
+			<triggered_effect trigger="onSelfBuffUpdate" action="CheckFireProximity, SCore" range="6"  cvar="_close6mFires" />
+			<triggered_effect trigger="onSelfBuffUpdate" action="CheckFireProximity, SCore" range="8"  cvar="_nearFires" />
+			<triggered_effect trigger="onSelfBuffUpdate" action="CheckFireProximity, SCore" range="10"  cvar="_near10mFires" />
+			<triggered_effect trigger="onSelfBuffUpdate" action="CheckFireProximity, SCore" range="12"  cvar="_near12mFires" />
+			<triggered_effect trigger="onSelfBuffUpdate" action="CheckFireProximity, SCore" range="15"  cvar="_farFires" />
+			<triggered_effect trigger="onSelfBuffUpdate" action="CheckFireProximity, SCore" range="20"  cvar="_far20mFires" />
+		</effect_group>
+
+		<effect_group>
+			<requirement name="!HasBuff" buff="god"/>
+			<requirement name="!HasBuff" buff="buffFireProxFXlight"/>
+			<requirement name="!HasBuff" buff="buffFireProxFXmed"/>
+			<requirement name="!HasBuff" buff="buffFireProxFXheavy"/>
+			<requirement name="!HasBuff" buff="guppyIsOnFire"/>
+			<requirement name="!HasBuff" buff="guppyBurning"/>
+			<requirement name="!HasBuff" buff="buffDiein30Fire"/>
+			<requirement name="CVarCompare" cvar="_closeFires" operation="GTE" value="1"/>
+			<requirement name="CVarCompare" cvar="_closeFires" operation="LT" value="13"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="3"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffFireProxFXlight"/>
+		</effect_group>
+
+		<effect_group>
+			<requirement name="!HasBuff" buff="god"/>
+			<requirement name="!HasBuff" buff="buffFireProxFXlight"/>
+			<requirement name="!HasBuff" buff="buffFireProxFXmed"/>
+			<requirement name="!HasBuff" buff="buffFireProxFXheavy"/>
+			<requirement name="!HasBuff" buff="guppyIsOnFire"/>
+			<requirement name="!HasBuff" buff="guppyBurning"/>
+			<requirement name="!HasBuff" buff="buffDiein30Fire"/>
+			<requirement name="CVarCompare" cvar="_close6mFires" operation="GTE" value="3"/>
+			<requirement name="CVarCompare" cvar="_close6mFires" operation="LT" value="15"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="3"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffFireProxFXlight"/>
+		</effect_group>
+
+		<effect_group>
+			<requirement name="!HasBuff" buff="god"/>
+			<requirement name="!HasBuff" buff="buffFireProxFXlight"/>
+			<requirement name="!HasBuff" buff="buffFireProxFXmed"/>
+			<requirement name="!HasBuff" buff="buffFireProxFXheavy"/>
+			<requirement name="!HasBuff" buff="guppyIsOnFire"/>
+			<requirement name="!HasBuff" buff="guppyBurning"/>
+			<requirement name="!HasBuff" buff="buffDiein30Fire"/>
+			<requirement name="CVarCompare" cvar="_nearFires" operation="GTE" value="5"/>
+			<requirement name="CVarCompare" cvar="_nearFires" operation="LT" value="25"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="3"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffFireProxFXlight"/>
+		</effect_group>
+
+		<effect_group>
+			<requirement name="!HasBuff" buff="god"/>
+			<requirement name="!HasBuff" buff="buffFireProxFXlight"/>
+			<requirement name="!HasBuff" buff="buffFireProxFXmed"/>
+			<requirement name="!HasBuff" buff="buffFireProxFXheavy"/>
+			<requirement name="!HasBuff" buff="guppyIsOnFire"/>
+			<requirement name="!HasBuff" buff="guppyBurning"/>
+			<requirement name="!HasBuff" buff="buffDiein30Fire"/>
+			<requirement name="CVarCompare" cvar="_near10mFires" operation="GTE" value="10"/>
+			<requirement name="CVarCompare" cvar="_near10mFires" operation="LT" value="50"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="3"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffFireProxFXlight"/>
+		</effect_group>
+
+		<effect_group>
+			<requirement name="!HasBuff" buff="god"/>
+			<requirement name="!HasBuff" buff="buffFireProxFXlight"/>
+			<requirement name="!HasBuff" buff="buffFireProxFXmed"/>
+			<requirement name="!HasBuff" buff="buffFireProxFXheavy"/>
+			<requirement name="!HasBuff" buff="guppyIsOnFire"/>
+			<requirement name="!HasBuff" buff="guppyBurning"/>
+			<requirement name="!HasBuff" buff="buffDiein30Fire"/>
+			<requirement name="CVarCompare" cvar="_near12mFires" operation="GTE" value="15"/>
+			<requirement name="CVarCompare" cvar="_near12mFires" operation="LT" value="50"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="3"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffFireProxFXlight"/>
+		</effect_group>
+
+		<effect_group>
+			<requirement name="!HasBuff" buff="god"/>
+			<requirement name="!HasBuff" buff="buffFireProxFXlight"/>
+			<requirement name="!HasBuff" buff="buffFireProxFXmed"/>
+			<requirement name="!HasBuff" buff="buffFireProxFXheavy"/>
+			<requirement name="!HasBuff" buff="guppyIsOnFire"/>
+			<requirement name="!HasBuff" buff="guppyBurning"/>
+			<requirement name="!HasBuff" buff="buffDiein30Fire"/>
+			<requirement name="CVarCompare" cvar="_farFires" operation="GTE" value="25"/>
+			<requirement name="CVarCompare" cvar="_farFires" operation="LT" value="50"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="3"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffFireProxFXlight"/>
+		</effect_group>
+
+		<effect_group>
+			<requirement name="!HasBuff" buff="god"/>
+			<requirement name="!HasBuff" buff="buffFireProxFXlight"/>
+			<requirement name="!HasBuff" buff="buffFireProxFXmed"/>
+			<requirement name="!HasBuff" buff="buffFireProxFXheavy"/>
+			<requirement name="!HasBuff" buff="guppyIsOnFire"/>
+			<requirement name="!HasBuff" buff="guppyBurning"/>
+			<requirement name="!HasBuff" buff="buffDiein30Fire"/>
+			<requirement name="CVarCompare" cvar="_far20mFires" operation="GTE" value="50"/>
+			<requirement name="CVarCompare" cvar="_far20mFires" operation="LT" value="75"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="3"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffFireProxFXlight"/>
+		</effect_group>
+
+		<effect_group>
+			<requirement name="!HasBuff" buff="god"/>
+			<!-- <requirement name="!HasBuff" buff="buffFireProxFXlight"/> -->
+			<requirement name="!HasBuff" buff="buffFireProxFXmed"/>
+			<requirement name="!HasBuff" buff="buffFireProxFXheavy"/>
+			<requirement name="!HasBuff" buff="guppyIsOnFire"/>
+			<requirement name="!HasBuff" buff="guppyBurning"/>
+			<requirement name="!HasBuff" buff="buffDiein30Fire"/>
+			<requirement name="CVarCompare" cvar="_closeFires" operation="GTE" value="13"/>
+			<requirement name="CVarCompare" cvar="_closeFires" operation="LT" value="25"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="3"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffFireProxFXmed"/>
+		</effect_group>
+
+		<effect_group>
+			<requirement name="!HasBuff" buff="god"/>
+			<!-- <requirement name="!HasBuff" buff="buffFireProxFXlight"/> -->
+			<requirement name="!HasBuff" buff="buffFireProxFXmed"/>
+			<requirement name="!HasBuff" buff="buffFireProxFXheavy"/>
+			<requirement name="!HasBuff" buff="guppyIsOnFire"/>
+			<requirement name="!HasBuff" buff="guppyBurning"/>
+			<requirement name="!HasBuff" buff="buffDiein30Fire"/>
+			<requirement name="CVarCompare" cvar="_close6mFires" operation="GTE" value="15"/>
+			<requirement name="CVarCompare" cvar="_close6mFires" operation="LT" value="50"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="3"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffFireProxFXmed"/>
+		</effect_group>
+
+		<effect_group>
+			<requirement name="!HasBuff" buff="god"/>
+			<!-- <requirement name="!HasBuff" buff="buffFireProxFXlight"/> -->
+			<requirement name="!HasBuff" buff="buffFireProxFXmed"/>
+			<requirement name="!HasBuff" buff="buffFireProxFXheavy"/>
+			<requirement name="!HasBuff" buff="guppyIsOnFire"/>
+			<requirement name="!HasBuff" buff="guppyBurning"/>
+			<requirement name="!HasBuff" buff="buffDiein30Fire"/>
+			<requirement name="CVarCompare" cvar="_nearFires" operation="GTE" value="15"/>
+			<requirement name="CVarCompare" cvar="_nearFires" operation="LT" value="75"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="3"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffFireProxFXmed"/>
+		</effect_group>
+
+		<effect_group>
+			<requirement name="!HasBuff" buff="god"/>
+			<!-- <requirement name="!HasBuff" buff="buffFireProxFXlight"/> -->
+			<requirement name="!HasBuff" buff="buffFireProxFXmed"/>
+			<requirement name="!HasBuff" buff="buffFireProxFXheavy"/>
+			<requirement name="!HasBuff" buff="guppyIsOnFire"/>
+			<requirement name="!HasBuff" buff="guppyBurning"/>
+			<requirement name="!HasBuff" buff="buffDiein30Fire"/>
+			<requirement name="CVarCompare" cvar="_near10mFires" operation="GTE" value="50"/>
+			<requirement name="CVarCompare" cvar="_near10mFires" operation="LT" value="100"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="3"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffFireProxFXmed"/>
+		</effect_group>
+
+		<effect_group>
+			<requirement name="!HasBuff" buff="god"/>
+			<!-- <requirement name="!HasBuff" buff="buffFireProxFXlight"/> -->
+			<requirement name="!HasBuff" buff="buffFireProxFXmed"/>
+			<requirement name="!HasBuff" buff="buffFireProxFXheavy"/>
+			<requirement name="!HasBuff" buff="guppyIsOnFire"/>
+			<requirement name="!HasBuff" buff="guppyBurning"/>
+			<requirement name="!HasBuff" buff="buffDiein30Fire"/>
+			<requirement name="CVarCompare" cvar="_near12mFires" operation="GTE" value="50"/>
+			<requirement name="CVarCompare" cvar="_near12mFires" operation="LT" value="150"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="3"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffFireProxFXmed"/>
+		</effect_group>
+
+		<effect_group>
+			<requirement name="!HasBuff" buff="god"/>
+			<!-- <requirement name="!HasBuff" buff="buffFireProxFXlight"/> -->
+			<requirement name="!HasBuff" buff="buffFireProxFXmed"/>
+			<requirement name="!HasBuff" buff="buffFireProxFXheavy"/>
+			<requirement name="!HasBuff" buff="guppyIsOnFire"/>
+			<requirement name="!HasBuff" buff="guppyBurning"/>
+			<requirement name="!HasBuff" buff="buffDiein30Fire"/>
+			<requirement name="CVarCompare" cvar="_farFires" operation="GTE" value="75"/>
+			<requirement name="CVarCompare" cvar="_farFires" operation="LT" value="175"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="3"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffFireProxFXmed"/>
+		</effect_group>
+
+		<effect_group>
+			<requirement name="!HasBuff" buff="god"/>
+			<!-- <requirement name="!HasBuff" buff="buffFireProxFXlight"/> -->
+			<requirement name="!HasBuff" buff="buffFireProxFXmed"/>
+			<requirement name="!HasBuff" buff="buffFireProxFXheavy"/>
+			<requirement name="!HasBuff" buff="guppyIsOnFire"/>
+			<requirement name="!HasBuff" buff="guppyBurning"/>
+			<requirement name="!HasBuff" buff="buffDiein30Fire"/>
+			<requirement name="CVarCompare" cvar="_far20mFires" operation="GTE" value="125"/>
+			<requirement name="CVarCompare" cvar="_far20mFires" operation="LT" value="250"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="3"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffFireProxFXmed"/>
+		</effect_group>
+		
+		
+		<effect_group>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="3"/>
+			<requirement name="!HasBuff" buff="god"/>
+			<!-- <requirement name="!HasBuff" buff="buffFireProxFXlight"/> -->
+			<!-- <requirement name="!HasBuff" buff="buffFireProxFXmed"/> -->
+			<requirement name="!HasBuff" buff="buffFireProxFXheavy"/>
+			<requirement name="!HasBuff" buff="guppyIsOnFire"/>
+			<requirement name="!HasBuff" buff="guppyBurning"/>
+			<requirement name="!HasBuff" buff="buffDiein30Fire"/>
+			<requirement name="CVarCompare" cvar="_closeFires" operation="GTE" value="25"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffFireProxFXheavy"/>
+		</effect_group>
+		
+		<effect_group>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="3"/>
+			<requirement name="!HasBuff" buff="god"/>
+			<!-- <requirement name="!HasBuff" buff="buffFireProxFXlight"/> -->
+			<!-- <requirement name="!HasBuff" buff="buffFireProxFXmed"/> -->
+			<requirement name="!HasBuff" buff="buffFireProxFXheavy"/>
+			<requirement name="!HasBuff" buff="guppyIsOnFire"/>
+			<requirement name="!HasBuff" buff="guppyBurning"/>
+			<requirement name="!HasBuff" buff="buffDiein30Fire"/>
+			<requirement name="CVarCompare" cvar="_close6mFires" operation="GTE" value="50"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffFireProxFXheavy"/>
+		</effect_group>
+		
+		<effect_group>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="3"/>
+			<requirement name="!HasBuff" buff="god"/>
+			<!-- <requirement name="!HasBuff" buff="buffFireProxFXlight"/> -->
+			<!-- <requirement name="!HasBuff" buff="buffFireProxFXmed"/> -->
+			<requirement name="!HasBuff" buff="buffFireProxFXheavy"/>
+			<requirement name="!HasBuff" buff="guppyIsOnFire"/>
+			<requirement name="!HasBuff" buff="guppyBurning"/>
+			<requirement name="!HasBuff" buff="buffDiein30Fire"/>
+			<requirement name="CVarCompare" cvar="_nearFires" operation="GTE" value="75"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffFireProxFXheavy"/>
+		</effect_group>
+		
+		<effect_group>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="3"/>
+			<requirement name="!HasBuff" buff="god"/>
+			<!-- <requirement name="!HasBuff" buff="buffFireProxFXlight"/> -->
+			<!-- <requirement name="!HasBuff" buff="buffFireProxFXmed"/> -->
+			<requirement name="!HasBuff" buff="buffFireProxFXheavy"/>
+			<requirement name="!HasBuff" buff="guppyIsOnFire"/>
+			<requirement name="!HasBuff" buff="guppyBurning"/>
+			<requirement name="!HasBuff" buff="buffDiein30Fire"/>
+			<requirement name="CVarCompare" cvar="_near10mFires" operation="GTE" value="100"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffFireProxFXheavy"/>
+		</effect_group>
+		
+		<effect_group>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="3"/>
+			<requirement name="!HasBuff" buff="god"/>
+			<!-- <requirement name="!HasBuff" buff="buffFireProxFXlight"/> -->
+			<!-- <requirement name="!HasBuff" buff="buffFireProxFXmed"/> -->
+			<requirement name="!HasBuff" buff="buffFireProxFXheavy"/>
+			<requirement name="!HasBuff" buff="guppyIsOnFire"/>
+			<requirement name="!HasBuff" buff="guppyBurning"/>
+			<requirement name="!HasBuff" buff="buffDiein30Fire"/>
+			<requirement name="CVarCompare" cvar="_near12mFires" operation="GTE" value="150"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffFireProxFXheavy"/>
+		</effect_group>
+
+	</buff>
+
+	<buff name="buffFireProxFXlight" hidden="true"> 
+		<damage_type value="heat"/>
+		<stack_type value="replace"/>
+		<duration value="3"/>
+		<update_rate value="2"/>
+
+		<effect_group>
+			<requirement name="!HasBuff" buff="god"/>
+			<requirement name="!HasBuff" buff="buffFireProtection"/>
+			<requirement name="!HasBuff" buff="guppyIsOnFire"/>
+			<requirement name="!HasBuff" buff="guppyBurning"/>
+			<requirement name="!HasBuff" buff="buffDiein30Fire"/>
+			<requirement name="CVarCompare" cvar="_closeFires" operation="GTE" value="1"/>
+			<requirement name="CVarCompare" cvar="_closeFires" operation="LT" value="3"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="2"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="subtract" value="1"/>
+		</effect_group>
+
+		<effect_group>
+			<requirement name="!HasBuff" buff="god"/>
+			<requirement name="!HasBuff" buff="buffFireProtection"/>
+			<requirement name="!HasBuff" buff="guppyIsOnFire"/>
+			<requirement name="!HasBuff" buff="guppyBurning"/>
+			<requirement name="!HasBuff" buff="buffDiein30Fire"/>
+			<requirement name="CVarCompare" cvar="_close6mFires" operation="GTE" value="3"/>
+			<requirement name="CVarCompare" cvar="_close6mFires" operation="LT" value="5"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="2"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="subtract" value="1"/>
+		</effect_group>
+
+		<effect_group>
+			<requirement name="!HasBuff" buff="god"/>
+			<requirement name="!HasBuff" buff="buffFireProtection"/>
+			<requirement name="!HasBuff" buff="guppyIsOnFire"/>
+			<requirement name="!HasBuff" buff="guppyBurning"/>
+			<requirement name="!HasBuff" buff="buffDiein30Fire"/>
+			<requirement name="CVarCompare" cvar="_nearFires" operation="GTE" value="5"/>
+			<requirement name="CVarCompare" cvar="_nearFires" operation="LT" value="10"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="2"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="subtract" value="1"/>
+		</effect_group>
+
+		<effect_group>
+			<requirement name="!HasBuff" buff="god"/>
+			<requirement name="!HasBuff" buff="buffFireProtection"/>
+			<requirement name="!HasBuff" buff="guppyIsOnFire"/>
+			<requirement name="!HasBuff" buff="guppyBurning"/>
+			<requirement name="!HasBuff" buff="buffDiein30Fire"/>
+			<requirement name="CVarCompare" cvar="_near10mFires" operation="GTE" value="10"/>
+			<requirement name="CVarCompare" cvar="_near10mFires" operation="LT" value="15"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="2"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="subtract" value="1"/>
+		</effect_group>
+
+		<effect_group>
+			<requirement name="!HasBuff" buff="god"/>
+			<requirement name="!HasBuff" buff="buffFireProtection"/>
+			<requirement name="!HasBuff" buff="guppyIsOnFire"/>
+			<requirement name="!HasBuff" buff="guppyBurning"/>
+			<requirement name="!HasBuff" buff="buffDiein30Fire"/>
+			<requirement name="CVarCompare" cvar="_near12mFires" operation="GTE" value="15"/>
+			<requirement name="CVarCompare" cvar="_near12mFires" operation="LT" value="25"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="2"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="subtract" value="1"/>
+		</effect_group>
+
+		<effect_group>
+			<requirement name="!HasBuff" buff="god"/>
+			<requirement name="!HasBuff" buff="buffFireProtection"/>
+			<requirement name="!HasBuff" buff="guppyIsOnFire"/>
+			<requirement name="!HasBuff" buff="guppyBurning"/>
+			<requirement name="!HasBuff" buff="buffDiein30Fire"/>
+			<requirement name="CVarCompare" cvar="_farFires" operation="GTE" value="25"/>
+			<requirement name="CVarCompare" cvar="_farFires" operation="LT" value="50"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="2"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="subtract" value="1"/>
+		</effect_group>
+
+		<effect_group>
+			<requirement name="!HasBuff" buff="god"/>
+			<requirement name="!HasBuff" buff="buffFireProtection"/>
+			<requirement name="!HasBuff" buff="guppyIsOnFire"/>
+			<requirement name="!HasBuff" buff="guppyBurning"/>
+			<requirement name="!HasBuff" buff="buffDiein30Fire"/>
+			<requirement name="CVarCompare" cvar="_far20mFires" operation="GTE" value="50"/>
+			<requirement name="CVarCompare" cvar="_far20mFires" operation="LT" value="75"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="2"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="subtract" value="1"/>
+		</effect_group>
+		<effect_group>			
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="water" operation="add" value="-1">
+				<requirement name="!HasBuff" buff="god"/>
+				<requirements compare_type="or">
+					<requirement name="CVarCompare" cvar="_closeFires" operation="GTE" value="11"/>
+					<requirement name="CVarCompare" cvar="_close6mFires" operation="GTE" value="12"/>
+					<requirement name="CVarCompare" cvar="_nearFires" operation="GTE" value="13"/>
+					<requirement name="CVarCompare" cvar="_near10mFires" operation="GTE" value="14"/>
+					<requirement name="CVarCompare" cvar="_near12mFires" operation="GTE" value="15"/>
+					<requirement name="CVarCompare" cvar="_farFires" operation="GTE" value="17"/>
+					<requirement name="CVarCompare" cvar="_far20mFires" operation="GTE" value="20"/>
+				</requirements>
+			</triggered_effect>
+		</effect_group>
+
+		<effect_group>
+			<requirement name="!HasBuff" buff="god"/>
+			<requirement name="!HasBuff" buff="buffFireProtection"/>
+			<requirements compare_type="or">
+				<requirement name="CVarCompare" cvar="_closeFires" operation="GTE" value="1"/>
+				<requirement name="CVarCompare" cvar="_close6mFires" operation="GTE" value="2"/>
+				<requirement name="CVarCompare" cvar="_nearFires" operation="GTE" value="3"/>
+				<requirement name="CVarCompare" cvar="_near10mFires" operation="GTE" value="4"/>
+				<requirement name="CVarCompare" cvar="_near12mFires" operation="GTE" value="5"/>
+				<requirement name="CVarCompare" cvar="_farFires" operation="GTE" value="7"/>
+				<requirement name="CVarCompare" cvar="_far20mFires" operation="GTE" value="10"/>
+			</requirements>
+				<!-- <passive_effect name="HealthChangeOT" operation="base_subtract" value=".5"/> -->
+				<passive_effect name="WaterChangeOT" operation="base_subtract" value="1"/>
+				<passive_effect name="HypothermalResist" operation="base_add" value="30"/>
+				<passive_effect name="HyperthermalResist" operation="base_add" value="-15"/>
+		</effect_group>
+	</buff>
+
+	<buff name="buffFireProxFXmed" hidden="true"> 
+		<damage_type value="heat"/>
+		<stack_type value="replace"/>
+		<duration value="7"/>
+		<update_rate value="3"/>
+
+		<effect_group>
+			<requirement name="!HasBuff" buff="god"/>
+			<requirement name="!HasBuff" buff="buffFireProtection"/>
+			<requirement name="!HasBuff" buff="guppyIsOnFire"/>
+			<requirement name="!HasBuff" buff="guppyBurning"/>
+			<requirement name="!HasBuff" buff="buffDiein30Fire"/>
+			<requirement name="CVarCompare" cvar="_closeFires" operation="GTE" value="3"/>
+			<requirement name="CVarCompare" cvar="_closeFires" operation="LT" value="5"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="3"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="subtract" value="2"/>
+		</effect_group>
+
+		<effect_group>
+			<requirement name="!HasBuff" buff="god"/>
+			<requirement name="!HasBuff" buff="buffFireProtection"/>
+			<requirement name="!HasBuff" buff="guppyIsOnFire"/>
+			<requirement name="!HasBuff" buff="guppyBurning"/>
+			<requirement name="!HasBuff" buff="buffDiein30Fire"/>
+			<requirement name="CVarCompare" cvar="_close6mFires" operation="GTE" value="5"/>
+			<requirement name="CVarCompare" cvar="_close6mFires" operation="LT" value="10"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="3"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="subtract" value="2"/>
+		</effect_group>
+
+		<effect_group>
+			<requirement name="!HasBuff" buff="god"/>
+			<requirement name="!HasBuff" buff="buffFireProtection"/>
+			<requirement name="!HasBuff" buff="guppyIsOnFire"/>
+			<requirement name="!HasBuff" buff="guppyBurning"/>
+			<requirement name="!HasBuff" buff="buffDiein30Fire"/>
+			<requirement name="CVarCompare" cvar="_nearFires" operation="GTE" value="10"/>
+			<requirement name="CVarCompare" cvar="_nearFires" operation="LT" value="15"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="3"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="subtract" value="2"/>
+		</effect_group>
+
+		<effect_group>
+			<requirement name="!HasBuff" buff="god"/>
+			<requirement name="!HasBuff" buff="buffFireProtection"/>
+			<requirement name="!HasBuff" buff="guppyIsOnFire"/>
+			<requirement name="!HasBuff" buff="guppyBurning"/>
+			<requirement name="!HasBuff" buff="buffDiein30Fire"/>
+			<requirement name="CVarCompare" cvar="_near10mFires" operation="GTE" value="15"/>
+			<requirement name="CVarCompare" cvar="_near10mFires" operation="LT" value="25"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="3"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="subtract" value="2"/>
+		</effect_group>
+
+		<effect_group>
+			<requirement name="!HasBuff" buff="god"/>
+			<requirement name="!HasBuff" buff="buffFireProtection"/>
+			<requirement name="!HasBuff" buff="guppyIsOnFire"/>
+			<requirement name="!HasBuff" buff="guppyBurning"/>
+			<requirement name="!HasBuff" buff="buffDiein30Fire"/>
+			<requirement name="CVarCompare" cvar="_near12mFires" operation="GTE" value="25"/>
+			<requirement name="CVarCompare" cvar="_near12mFires" operation="LT" value="50"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="3"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="subtract" value="2"/>
+		</effect_group>
+
+		<effect_group>
+			<requirement name="!HasBuff" buff="god"/>
+			<requirement name="!HasBuff" buff="buffFireProtection"/>
+			<requirement name="!HasBuff" buff="guppyIsOnFire"/>
+			<requirement name="!HasBuff" buff="guppyBurning"/>
+			<requirement name="!HasBuff" buff="buffDiein30Fire"/>
+			<requirement name="CVarCompare" cvar="_farFires" operation="GTE" value="75"/>
+			<requirement name="CVarCompare" cvar="_farFires" operation="LT" value="100"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="3"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="subtract" value="2"/>
+		</effect_group>
+
+		<effect_group>
+			<requirement name="!HasBuff" buff="god"/>
+			<requirement name="!HasBuff" buff="buffFireProtection"/>
+			<requirement name="!HasBuff" buff="guppyIsOnFire"/>
+			<requirement name="!HasBuff" buff="guppyBurning"/>
+			<requirement name="!HasBuff" buff="buffDiein30Fire"/>
+			<requirement name="CVarCompare" cvar="_far20mFires" operation="GTE" value="100"/>
+			<requirement name="CVarCompare" cvar="_far20mFires" operation="LT" value="150"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="3"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="subtract" value="2"/>
+		</effect_group>
+
+		<effect_group>			
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="water" operation="add" value="-3">
+				<requirement name="!HasBuff" buff="god"/>
+				<requirements compare_type="or">
+					<requirement name="CVarCompare" cvar="_closeFires" operation="GTE" value="11"/>
+					<requirement name="CVarCompare" cvar="_close6mFires" operation="GTE" value="12"/>
+					<requirement name="CVarCompare" cvar="_nearFires" operation="GTE" value="13"/>
+					<requirement name="CVarCompare" cvar="_near10mFires" operation="GTE" value="14"/>
+					<requirement name="CVarCompare" cvar="_near12mFires" operation="GTE" value="15"/>
+					<requirement name="CVarCompare" cvar="_farFires" operation="GTE" value="17"/>
+					<requirement name="CVarCompare" cvar="_far20mFires" operation="GTE" value="20"/>
+				</requirements>
+			</triggered_effect>
+		</effect_group>
+		<effect_group>
+			<requirement name="!HasBuff" buff="god"/>
+			<requirement name="!HasBuff" buff="buffFireProtection"/>
+			<requirement name="!HasBuff" buff="guppyIsOnFire"/>
+			<requirement name="!HasBuff" buff="guppyBurning"/>
+			<requirement name="!HasBuff" buff="buffDiein30Fire"/>
+			<requirement name="!HasBuff" buff="buffExtinguishFire"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="3"/>
+			<requirements compare_type="or">
+				<requirement name="CVarCompare" cvar="_closeFires" operation="GTE" value="17"/>
+				<requirement name="CVarCompare" cvar="_close6mFires" operation="GTE" value="25"/>
+				<requirement name="CVarCompare" cvar="_nearFires" operation="GTE" value="50"/>
+				<requirement name="CVarCompare" cvar="_near10mFires" operation="GTE" value="75"/>
+				<requirement name="CVarCompare" cvar="_near12mFires" operation="GTE" value="150"/>
+				<requirement name="CVarCompare" cvar="_farFires" operation="GTE" value="175"/>
+				<requirement name="CVarCompare" cvar="_far20mFires" operation="GTE" value="190"/>
+			</requirements>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="guppyBurning"/>
+		</effect_group>
+
+		<effect_group>
+			<requirement name="!HasBuff" buff="god"/>
+			<requirement name="!HasBuff" buff="buffFireProtection"/>
+			<requirement name="!HasBuff" buff="guppyIsOnFire"/>
+			<requirement name="!HasBuff" buff="guppyBurning"/>
+			<requirement name="!HasBuff" buff="buffDiein30Fire"/>
+			<requirement name="!HasBuff" buff="buffExtinguishFire"/>
+			<requirements compare_type="or">
+				<requirement name="CVarCompare" cvar="_closeFires" operation="GTE" value="17"/>
+				<requirement name="CVarCompare" cvar="_close6mFires" operation="GTE" value="25"/>
+				<requirement name="CVarCompare" cvar="_nearFires" operation="GTE" value="50"/>
+				<requirement name="CVarCompare" cvar="_near10mFires" operation="GTE" value="75"/>
+				<requirement name="CVarCompare" cvar="_near12mFires" operation="GTE" value="115"/>
+				<requirement name="CVarCompare" cvar="_farFires" operation="GTE" value="117"/>
+				<requirement name="CVarCompare" cvar="_far20mFires" operation="GTE" value="120"/>
+			</requirements>
+				<!-- <passive_effect name="HealthChangeOT" operation="base_subtract" value="1.5"/> -->
+				<passive_effect name="WaterChangeOT" operation="base_subtract" value="2"/>
+				<passive_effect name="HypothermalResist" operation="base_add" value="50"/>
+				<passive_effect name="HyperthermalResist" operation="base_add" value="-30"/>
+		</effect_group>
+	</buff>
+
+	<buff name="buffFireProxFXheavy" hidden="true"> 
+		<damage_type value="heat"/>
+		<stack_type value="replace"/>
+		<duration value="10"/>
+		<update_rate value="3"/>
+		<effect_group>			
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="subtract" value="3">
+			<requirement name="!HasBuff" buff="god"/>
+			<requirement name="!HasBuff" buff="buffFireProtection"/>
+			<requirement name="!HasBuff" buff="guppyIsOnFire"/>
+			<requirement name="!HasBuff" buff="guppyBurning"/>
+			<requirement name="!HasBuff" buff="buffDiein30Fire"/>
+				<!-- <requirement name="CVarCompare" cvar="_closeFires" operation="LTE" value="15"/> -->
+				<requirements compare_type="or">
+					<requirement name="CVarCompare" cvar="_closeFires" operation="GTE" value="17"/>
+					<requirement name="CVarCompare" cvar="_close6mFires" operation="GTE" value="25"/>
+					<requirement name="CVarCompare" cvar="_nearFires" operation="GTE" value="50"/>
+					<requirement name="CVarCompare" cvar="_near10mFires" operation="GTE" value="75"/>
+					<requirement name="CVarCompare" cvar="_near12mFires" operation="GTE" value="15"/>
+					<requirement name="CVarCompare" cvar="_farFires" operation="GTE" value="17"/>
+					<requirement name="CVarCompare" cvar="_far20mFires" operation="GTE" value="20"/>
+				</requirements>
+			</triggered_effect>			
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="water" operation="add" value="-5">
+			<requirement name="!HasBuff" buff="god"/>
+				<requirements compare_type="or">
+					<requirement name="CVarCompare" cvar="_closeFires" operation="GTE" value="17"/>
+					<requirement name="CVarCompare" cvar="_close6mFires" operation="GTE" value="25"/>
+					<requirement name="CVarCompare" cvar="_nearFires" operation="GTE" value="50"/>
+					<requirement name="CVarCompare" cvar="_near10mFires" operation="GTE" value="75"/>
+					<requirement name="CVarCompare" cvar="_near12mFires" operation="GTE" value="15"/>
+					<requirement name="CVarCompare" cvar="_farFires" operation="GTE" value="17"/>
+					<requirement name="CVarCompare" cvar="_far20mFires" operation="GTE" value="20"/>
+				</requirements>
+			</triggered_effect>
+		</effect_group>
+		<effect_group>
+			<requirement name="!HasBuff" buff="god"/>
+			<requirement name="!HasBuff" buff="buffFireProtection"/>
+			<requirement name="!HasBuff" buff="guppyIsOnFire"/>
+			<requirement name="!HasBuff" buff="guppyBurning"/>
+			<requirement name="!HasBuff" buff="buffDiein30Fire"/>
+			<requirement name="!HasBuff" buff="buffExtinguishFire"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="3"/>
+			<requirements compare_type="or">
+				<requirement name="CVarCompare" cvar="_closeFires" operation="GTE" value="25"/>
+				<requirement name="CVarCompare" cvar="_close6mFires" operation="GTE" value="50"/>
+				<requirement name="CVarCompare" cvar="_nearFires" operation="GTE" value="75"/>
+				<requirement name="CVarCompare" cvar="_near10mFires" operation="GTE" value="125"/>
+				<requirement name="CVarCompare" cvar="_near12mFires" operation="GTE" value="175"/>
+				<requirement name="CVarCompare" cvar="_farFires" operation="GTE" value="200"/>
+				<requirement name="CVarCompare" cvar="_far20mFires" operation="GTE" value="250"/>
+			</requirements>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffDiein30Fire"/>
+		</effect_group>
+
+
+		<effect_group>
+			<requirement name="!HasBuff" buff="god"/>
+			<requirement name="!HasBuff" buff="buffFireProtection"/>
+			<requirement name="!HasBuff" buff="guppyIsOnFire"/>
+			<requirement name="!HasBuff" buff="guppyBurning"/>
+			<requirement name="!HasBuff" buff="buffDiein30Fire"/>
+			<requirement name="!HasBuff" buff="buffExtinguishFire"/>
+			<requirements compare_type="or">
+				<requirement name="CVarCompare" cvar="_closeFires" operation="GTE" value="25"/>
+				<requirement name="CVarCompare" cvar="_close6mFires" operation="GTE" value="50"/>
+				<requirement name="CVarCompare" cvar="_nearFires" operation="GTE" value="75"/>
+				<requirement name="CVarCompare" cvar="_near10mFires" operation="GTE" value="100"/>
+				<requirement name="CVarCompare" cvar="_near12mFires" operation="GTE" value="125"/>
+				<requirement name="CVarCompare" cvar="_farFires" operation="GTE" value="150"/>
+				<requirement name="CVarCompare" cvar="_far20mFires" operation="GTE" value="200"/>
+			</requirements>
+				<!-- <passive_effect name="HealthChangeOT" operation="base_subtract" value="2.5"/> -->
+				<passive_effect name="WaterChangeOT" operation="base_subtract" value="3"/>
+				<passive_effect name="HypothermalResist" operation="base_add" value="65"/>
+				<passive_effect name="HyperthermalResist" operation="base_add" value="-50"/>
+		</effect_group>
+	</buff>
+
+	</append>
+
+
+<append xpath="/buffs/buff[@name='guppyBurning']">
+		<effect_group>
+			<requirements compare_type="or">
+				<requirement name="HasBuff" buff="god"/>
+				<requirement name="HasBuff" buff="buffExtinguishFire"/>
+			</requirements>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="guppyBurning"/>
+		</effect_group>
+</append>
+
+<append xpath="/buffs/buff[@name='buffDiein30Fire']">
+		<effect_group>
+			<requirements compare_type="or">
+				<requirement name="HasBuff" buff="god"/>
+				<requirement name="HasBuff" buff="buffExtinguishFire"/>
+			</requirements>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffDiein30Fire"/>
+		</effect_group>
+</append>
+
+<append xpath="/buffs/buff[@name='buffStatusCheck01']">
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffFireProxTracker">
+				<requirement name="!HasBuff" buff="buffFireProxTracker"/>
+			</triggered_effect>
+		</effect_group>
+		<effect_group name="FireProxLogging">
+			<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" cvar="_closeFires"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" cvar="_close6mFires"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" cvar="_nearFires"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" cvar="_near10mFires"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" cvar="_near12mFires"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" cvar="_farFires"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" cvar="_far20mFires"/>
+		</effect_group>
+</append>
+
+<append xpath="/buffs/buff[@name='zombieBuffStatusCheck01']">
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="CheckFireProximity, SCore" range="5"  />
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="CoreTemp" operation="add" value="@_closeFires">
+				<requirement name="!HasBuff" buff="god"/>
+				<requirement name="ProgressionLevel" progression_name="perkWellInsulated" operation="LT" value="3"/>
+				<!-- <requirement name="CVarCompare" cvar="_coretemp" operation="LTE" value="30"/> -->
+				<requirement name="CVarCompare" cvar="_closeFires" operation="GTE" value="1"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="subtract" value="@_closeFires">
+				<requirement name="!HasBuff" buff="god"/>
+				<requirement name="CVarCompare" cvar="_closeFires" operation="GTE" value="20"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="guppyBurning">
+				<requirement name="!HasBuff" buff="god"/>
+				<!-- <requirement name="CVarCompare" cvar="_coretemp" operation="GTE" value="30"/> -->
+				<requirement name="CVarCompare" cvar="_closeFires" operation="GTE" value="9"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffDiein30Fire,guppyBurning">
+				<requirement name="!HasBuff" buff="god"/>
+				<!-- <requirement name="CVarCompare" cvar="_coretemp" operation="GTE" value="30"/> -->
+				<requirement name="CVarCompare" cvar="_closeFires" operation="GTE" value="13"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="CoreTemp" operation="add" value="-10">
+				<requirement name="!HasBuff" buff="god"/>
+				<requirement name="CVarCompare" cvar="_coretemp" operation="GTE" value="10"/>
+				<requirement name="CVarCompare" cvar="_closeFires" operation="LTE" value="1"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="CoreTemp" operation="add" value="-30">
+				<requirement name="!HasBuff" buff="god"/>
+				<requirement name="CVarCompare" cvar="_coretemp" operation="GTE" value="30"/>
+				<requirement name="CVarCompare" cvar="_closeFires" operation="LTE" value="5"/>
+			</triggered_effect>
+		</effect_group>
+</append>
+
+</configs>

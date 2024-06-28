@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<Name value="mjFireDanger" />
+	<DisplayName value="mjFireDanger" />
+	<Description value="Adds on to SCore's Fire Feature and requires Guppycur's Fire Mod as well. Being near fire alters player's coretemp and does damage if hot enough, will even set you on fire if enough fire around you." />
+	<Author value="magejosh, Guppycur, Sphereii" />
+	<Version value="1.0.0.0" />
+	<Website value="https://mageworks.studio" />
+</xml>

@@ -1,0 +1,31 @@
+<configs>
+	
+	<append xpath="/items/item[starts-with(@name, 'drinkJar') and not(contains(@name, 'Empty'))]">
+
+		<effect_group tiered="false">
+
+			<requirements compare_type="or">
+				<requirement name="HasBuff" buff="guppyIsOnFire"/>
+				<requirement name="HasBuff" buff="guppyBurning"/>
+			</requirements>
+
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+		</effect_group>
+
+	</append>
+
+	<append xpath="/items/item[contains(@name, 'Fire')]">
+
+		<effect_group tiered="false">
+
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" target="self" buff="buffFireProtection"/>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" target="self" buff="buffFireProtection"/>
+
+		</effect_group>
+
+	</append>
+
+
+
+
+</configs>

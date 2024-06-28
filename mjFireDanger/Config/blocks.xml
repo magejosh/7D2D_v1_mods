@@ -1,0 +1,123 @@
+<configs>
+  
+		<set xpath="/blocks/block[@name='ConfigFeatureBlock']/property[@class='FireManagement']/property[@name='FireEnable']/@value">true</set> 
+
+
+	<append xpath="/blocks/block[contains(@name, 'cntCar')]">
+	        <property name="Tags" value="flammable"/>	
+	</append>
+
+    <append xpath="/blocks/block[contains(@name, 'Trash')]">
+	        <property name="Tags" value="flammable"/>	
+	</append>
+
+    <append xpath="/blocks/block[contains(@name, 'deco')]">
+	        <property name="Tags" value="flammable"/>	
+	</append>
+
+    <append xpath="/blocks/block[contains(@name, 'bodyBag')]">
+	        <property name="Tags" value="flammable"/>	
+	</append>
+
+    <append xpath="/blocks/block[contains(@name, 'Meter')]">
+	        <property name="Tags" value="flammable"/>	
+	</append>
+
+    <append xpath="/blocks/block[contains(@name, 'conduit')]">
+	        <property name="Tags" value="flammable"/>	
+	</append>
+
+    <append xpath="/blocks/block[contains(@name, 'sign')]">
+	        <property name="Tags" value="flammable"/>	
+	</append>
+
+    <!-- <append xpath="/blocks/block[contains(@name, 'gas')]">
+	        <property name="Tags" value="flammable"/>	
+	</append> -->
+
+    <append xpath="/blocks/block[contains(@name, 'Gas')]">
+	        <property name="Tags" value="flammable"/>	
+	</append>
+
+    <append xpath="/blocks/block[contains(@name, 'bed')]">
+	        <property name="Tags" value="flammable"/>	
+	</append>
+
+    <append xpath="/blocks/block[contains(@name, 'Machine')]">
+	        <property name="Tags" value="flammable"/>	
+	</append>
+
+    <append xpath="/blocks/block[contains(@name, 'cntATM')]">
+	        <property name="Tags" value="flammable"/>	
+	</append>
+
+    <append xpath="/blocks/block[contains(@name, 'escalator')]">
+	        <property name="Tags" value="flammable"/>	
+	</append>
+
+    <append xpath="/blocks/block[contains(@name, 'oreCoal')]">
+	        <property name="Tags" value="flammable"/>	
+	</append>
+
+    <append xpath="/blocks/block[contains(@name, 'OreOil')]">
+	        <property name="Tags" value="flammable"/>	
+	</append>
+
+    <append xpath="/blocks/block[contains(@name, 'oreShale')]">
+	        <property name="Tags" value="flammable"/>	
+	</append>
+
+    <append xpath="/blocks/block[contains(@name, 'planted')]">
+	        <property name="Tags" value="flammable"/>	
+	</append>
+
+    <append xpath="/blocks/block[contains(@name, 'awningShapes')]">
+	        <property name="Tags" value="flammable"/>	
+	</append>
+
+    <append xpath="/blocks/block[contains(@name, 'corrugatedMetalShapes')]">
+	        <property name="Tags" value="flammable"/>	
+	</append>
+
+    <append xpath="/blocks/block[contains(@name, 'Chest')]">
+	        <property name="Tags" value="inflammable"/>	
+	</append>
+
+    <append xpath="/blocks/block[contains(@name, 'Crate')]">
+	        <property name="Tags" value="inflammable"/>	
+	</append>
+
+    <append xpath="/blocks/block[contains(@name, 'Safe')]">
+	        <property name="Tags" value="inflammable"/>	
+	</append>
+
+    <!-- <remove xpath="/blocks/block[@name='IceMachine']/property[@name='Tags']"/>     -->
+    <append xpath="/blocks/block[contains(@name, 'IceMachine')]">
+	        <property name="Tags" value="inflammable"/>	
+	</append>
+
+    <append xpath="/blocks/block[contains(@name, 'Freezer')]">
+	        <property name="Tags" value="inflammable"/>	
+	</append>
+
+    <append xpath="/blocks/block[contains(@name, 'Granite')]">
+	        <property name="Tags" value="inflammable"/>	
+	</append>
+
+    <append xpath="/blocks/block[contains(@name, 'pushButton')]">
+	        <property name="Tags" value="inflammable"/>	
+	</append>
+
+    <append xpath="/blocks/block[contains(@name, 'keyRack')]">
+	        <property name="Tags" value="inflammable"/>	
+	</append>
+
+    <append xpath="/blocks/block[contains(@name, 'controlPanel')]">
+	        <property name="Tags" value="inflammable"/>	
+	</append>
+
+    <append xpath="/blocks/block[contains(@name, 'Hydrant')]">
+	        <property name="Tags" value="inflammable"/>	
+			<property name="WaterSource" value="true" />
+	</append>
+</configs>
