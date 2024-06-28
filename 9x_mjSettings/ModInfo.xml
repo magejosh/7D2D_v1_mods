@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<Name value="mjSettings" />
+	<DisplayName value="mj Project Core Settings" />		
+	<Description value="Adds custom settings for SCore and XNPCCore." />
+	<Author value="sphereii, xyth, khzmusic, magejosh" />
+	<Version value="1.0.0.0" />
+	<Website value="https://mageworks.studio" />
+</xml>
