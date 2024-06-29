@@ -2,7 +2,7 @@
 
 ![I'm in danger Ralph](https://media.tenor.com/sj0E0izDFH0AAAAM/im-in-danger-ralph.gif)
 
-Makes raw meat and animal fat a dangerous idea. Doing makes you smell like prey, and all the predators and zombies will smell you from farther away and pursue you longer trying to chase your smell.
+Makes carrying raw meat and animal fat a dangerous idea. Doing so makes you smell like prey, and all the predators and zombies will smell you from farther away and pursue you longer trying to chase your smell.
 
 ## Features
 
