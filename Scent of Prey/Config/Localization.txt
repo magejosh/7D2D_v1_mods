@@ -1,0 +1,8 @@
+Key,File,Type,UsedInMainMenu,NoTranslate,english
+
+buffScentofPreyDesc,buffs,Buff,,,"You are carrying [db7c1d]Something Smelly[ffffff], predators will come far and wide to find you because of it. Better stash it somewhere safe, like a vehicle to protect yourself."
+buffScentofPreyName,buffs,Buff,,,"[db7c1d]Scent of Prey"
+
+tutorialTipSmelly01,Journal Tip,,,,"You are carrying [db7c1d]Something Smelly[ffffff], predators will come far and wide to find you because of it. Better stash it somewhere safe, like a vehicle to protect yourself."
+tutorialTipSmelly01_title,Journal Tip,,,,"[db7c1d]Scent of Prey"
+

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<Name value="Scent_of_Prey" />
+	<DisplayName value="Scent of Prey" />
+	<Description value="Player smells when carrying raw meat and animal fat and attracts predators." />
+	<Author value="magejosh" />
+	<Version value="1.0.0.3" />
+	<Website value="https://mageworks.studio" />
+</xml>
