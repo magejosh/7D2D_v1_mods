@@ -94,15 +94,15 @@ To create a new "My Mods:"
 With this method, you will download the source code from the GitLab site,
 and move the code directly into your 7D2D game folder.
 
-1. Open the GitLab page for this project:
+1. Open the GitHub page for this project:
    
-    [https://gitlab.com/karlgiesing/7d2d-a21-modlets](https://gitlab.com/karlgiesing/7d2d-1.0-modlets)
+    [https://github.com/magejosh/7D2D_v1_mods)
 
     You can download all the mods at once, or separately,
     by going to each mod's subdirectory.
 2. Make sure you are on the master branch (by default, you should be).
-3. On the middle right-hand side of the page, below the description, will be a download button;
-    click it and select the compression type of your choice (e.g. "zip" for Windows users).
+3. On the middle right-hand side of the page, below the description, will be a green CODE button;
+    click it and select the "Download as zip" or git clone the repo.
 4. Download the compressed file to a directory of your choice.
 5. Uncompress the file. This will create a containing folder, for example `7d2d-a21-modlets-master`.
 6. Open up your 7D2D game folder.
