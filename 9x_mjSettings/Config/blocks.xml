@@ -81,7 +81,10 @@
 				<!-- 4 types of locks based on difficult. Easier to most difficult. -->
 				<property name="MaxGiveAmount" value="10,8,6,4" />
 				<property name="BreakTime" value="1.2,1.0,.8,.6" />
-    </set>	
+ 				<property name="Left" value="Keypad4" />
+				<property name="Right" value="Keypad6" />
+				<property name="Turn" value="Keypad8,Keypad5,Keypad2" />
+   </set>	
 	
     <set xpath="/blocks/block[@name='ConfigFeatureBlock']/property[@class='AdvancedItemFeatures']">
 				<property name="Logging" value="false"/>
@@ -124,7 +127,9 @@
 				
 				<!-- Each item that does not have a ItemWeight property will be weighed at this value. -->
 				<property name="MinimumWeight" value="0.1" />
-    </set>	
+ 				
+				<property name="AutoRedeemChallenges" value="false" />
+   </set>	
 	
     <set xpath="/blocks/block[@name='ConfigFeatureBlock']/property[@class='AdvancedZombieFeatures']">
 				<property name="Logging" value="false"/>
