@@ -1,0 +1,186 @@
+<configs>
+<!-- <append xpath="/blocks/block/[contains(@property name='Light']">
+	<property name="HeatMapStrength" value="10"></property>
+	<property name="HeatMapTime" value="2500"></property>
+	<property name="HeatMapFrequency" value="500"></property>
+</append> -->
+
+<!-- <append xpath="/blocks/block/[contains(@name,'ember']">
+		<property name="HeatMapStrength" value="10">
+		<property name="HeatMapTime" value="2500"></property>
+		<property name="HeatMapFrequency" value="500"></property>
+</property> -->
+<!-- <append xpath="/blocks/block/[@name'porchLight01']/property[@name='HeatMapStrength']/@value">10</append>
+<append xpath="/blocks/block/[@name'porchLight01']/property[@name='HeatMapTime']/@value">250</append>
+<append xpath="/blocks/block/[@name'porchLight01']/property[@name='HeatMapFrequency']/@value">50</append> -->
+
+<!-- <append xpath="/blocks/block/[contains(@name,'ember']/property[@name='HeatMapStrength']/@value">10</append>
+ -->
+<!-- <set xpath="/blocks/block/[@name,'wallTorchLightPlayer']/property[@name='HeatMapStrength']/@value">10</set>
+<set xpath="/blocks/block/[@name,'wallTorchLightPlayer']/property[@name='HeatMapTime']/@value">250</set> -->
+<!-- 	<set xpath="/blocks/block[@name='wallTorchLight']/property[@name='HeatMapStrength']/@value">20</set>
+	<set xpath="/blocks/block[@name='wallTorchLight']/property[@name='HeatMapTime']/@value">250</set> 
+	<set xpath="/blocks/block[@name='wallTorchLight']/property[@name='HeatMapFrequency']/@value">50</set> --> 
+<!-- 	<set xpath="/blocks/block[@name='porchLight01']/property[@name='HeatMapStrength']/@value">20</set>
+	<set xpath="/blocks/block[@name='porchLight01']/property[@name='HeatMapTime']/@value">250</set> 
+	<set xpath="/blocks/block[@name='porchLight01']/property[@name='HeatMapFrequency']/@value">50</set>
+	<set xpath="/blocks/block[@name='lanternDecorLight']/property[@name='HeatMapStrength']/@value">20</set>
+	<set xpath="/blocks/block[@name='lanternDecorLight']/property[@name='HeatMapTime']/@value">250</set> 
+	<set xpath="/blocks/block[@name='lanternDecorLight']/property[@name='HeatMapFrequency']/@value">50</set>
+	<set xpath="/blocks/block[@name='flashlightDecor']/property[@name='HeatMapStrength']/@value">20</set>
+	<set xpath="/blocks/block[@name='flashlightDecor']/property[@name='HeatMapTime']/@value">250</set> 
+	<set xpath="/blocks/block[@name='flashlightDecor']/property[@name='HeatMapFrequency']/@value">50</set>
+	<set xpath="/blocks/block[@name='spotlightNailedDownPOI']/property[@name='HeatMapStrength']/@value">20</set>
+	<set xpath="/blocks/block[@name='spotlightNailedDownPOI']/property[@name='HeatMapTime']/@value">250</set> 
+	<set xpath="/blocks/block[@name='spotlightNailedDownPOI']/property[@name='HeatMapFrequency']/@value">50</set>
+	<set xpath="/blocks/block[@name='deskLampLight']/property[@name='HeatMapStrength']/@value">20</set>
+	<set xpath="/blocks/block[@name='deskLampLight']/property[@name='HeatMapTime']/@value">250</set> 
+	<set xpath="/blocks/block[@name='deskLampLight']/property[@name='HeatMapFrequency']/@value">50</set>
+	<set xpath="/blocks/block[@name='tableLampLight']/property[@name='HeatMapStrength']/@value">20</set>
+	<set xpath="/blocks/block[@name='tableLampLight']/property[@name='HeatMapTime']/@value">250</set> 
+	<set xpath="/blocks/block[@name='tableLampLight']/property[@name='HeatMapFrequency']/@value">50</set>
+	<set xpath="/blocks/block[@name='tableLampTippedOverLight']/property[@name='HeatMapStrength']/@value">20</set>
+	<set xpath="/blocks/block[@name='tableLampTippedOverLight']/property[@name='HeatMapTime']/@value">250</set> 
+	<set xpath="/blocks/block[@name='tableLampTippedOverLight']/property[@name='HeatMapFrequency']/@value">50</set>
+	<set xpath="/blocks/block[@name='workLightPOI']/property[@name='HeatMapStrength']/@value">20</set>
+	<set xpath="/blocks/block[@name='workLightPOI']/property[@name='HeatMapTime']/@value">250</set> 
+	<set xpath="/blocks/block[@name='workLightPOI']/property[@name='HeatMapFrequency']/@value">50</set>
+	<set xpath="/blocks/block[@name='chandelierLight']/property[@name='HeatMapStrength']/@value">20</set>
+	<set xpath="/blocks/block[@name='chandelierLight']/property[@name='HeatMapTime']/@value">250</set> 
+	<set xpath="/blocks/block[@name='chandelierLight']/property[@name='HeatMapFrequency']/@value">50</set>
+	<set xpath="/blocks/block[@name='candelabraLight']/property[@name='HeatMapStrength']/@value">20</set>
+	<set xpath="/blocks/block[@name='candelabraLight']/property[@name='HeatMapTime']/@value">250</set> 
+	<set xpath="/blocks/block[@name='candelabraLight']/property[@name='HeatMapFrequency']/@value">50</set> -->
+<!-- 	<set xpath="/blocks/block[@name='candleWallLight']/property[@name='HeatMapStrength']/@value">10</set>
+	<set xpath="/blocks/block[@name='candleWallLight']/property[@name='HeatMapTime']/@value">250</set> 
+	<set xpath="/blocks/block[@name='candleWallLight']/property[@name='HeatMapFrequency']/@value">50</set>	
+	<set xpath="/blocks/block[@name='candleTableLight']/property[@name='HeatMapStrength']/@value">10</set>
+	<set xpath="/blocks/block[@name='candleTableLight']/property[@name='HeatMapTime']/@value">250</set> 
+	<set xpath="/blocks/block[@name='candleTableLight']/property[@name='HeatMapFrequency']/@value">50</set> -->
+	<set xpath="/blocks/block[@name='candleWallLightPlayer']/property[@name='HeatMapStrength']/@value">60</set>
+	<!-- <set xpath="/blocks/block[@name='candleWallLightPlayer']/property[@name='HeatMapTime']/@value">1000</set>  -->
+	<!-- <set xpath="/blocks/block[@name='candleWallLightPlayer']/property[@name='HeatMapFrequency']/@value">50</set> -->
+	<set xpath="/blocks/block[@name='wallTorchLightPlayer']/property[@name='HeatMapStrength']/@value">86</set>
+	<!-- <set xpath="/blocks/block[@name='wallTorchLightPlayer']/property[@name='HeatMapTime']/@value">1000</set>  -->
+	<!-- <set xpath="/blocks/block[@name='wallTorchLightPlayer']/property[@name='HeatMapFrequency']/@value">50</set> -->
+	<set xpath="/blocks/block[@name='burningBarrelPlayer']/property[@name='HeatMapStrength']/@value">93</set>
+	<!-- <set xpath="/blocks/block[@name='burningBarrelPlayer']/property[@name='HeatMapTime']/@value">1000</set>  -->
+	<!-- <set xpath="/blocks/block[@name='burningBarrelPlayer']/property[@name='HeatMapFrequency']/@value">50</set>	 -->
+<!-- 	<set xpath="/blocks/block[@name='candleTableLightPlayer']/property[@name='HeatMapStrength']/@value">20</set>
+	<set xpath="/blocks/block[@name='candleTableLightPlayer']/property[@name='HeatMapTime']/@value">250</set> 
+	<set xpath="/blocks/block[@name='candleTableLightPlayer']/property[@name='HeatMapFrequency']/@value">50</set> -->	
+<!-- 	<set xpath="/blocks/block[@name='burningBarrel']/property[@name='HeatMapStrength']/@value">20</set>
+	<set xpath="/blocks/block[@name='burningBarrel']/property[@name='HeatMapTime']/@value">250</set> 
+	<set xpath="/blocks/block[@name='burningBarrel']/property[@name='HeatMapFrequency']/@value">50</set> -->
+
+<append xpath="/blocks/block[@name='emberPileDeco1']">
+		<property name="HeatMapStrength" value="10"/>
+</append>
+<append xpath="/blocks/block[@name='emberPileDeco1']">
+		<property name="HeatMapTime" value="5000"></property>
+</append>
+<append xpath="/blocks/block[@name='emberPileDeco1']">
+		<property name="HeatMapFrequency" value="1000"></property>
+</append>
+<append xpath="/blocks/block[@name='emberPileDeco3']">
+		<property name="HeatMapStrength" value="10"/>
+</append>
+<append xpath="/blocks/block[@name='emberPileDeco3']">
+		<property name="HeatMapTime" value="5000"></property>
+</append>
+<append xpath="/blocks/block[@name='emberPileDeco3']">
+		<property name="HeatMapFrequency" value="1000"></property>
+</append>
+
+<append xpath="/blocks/block[@name='emberPileLightPOI1']">
+		<property name="HeatMapStrength" value="10"/>
+</append>
+<append xpath="/blocks/block[@name='emberPileLightPOI1']">
+		<property name="HeatMapTime" value="5000"></property>
+</append>
+<append xpath="/blocks/block[@name='emberPileLightPOI1']">
+		<property name="HeatMapFrequency" value="1000"></property>
+</append>
+<append xpath="/blocks/block[@name='emberPileLightPOI2']">
+		<property name="HeatMapStrength" value="10"/>
+</append>
+<append xpath="/blocks/block[@name='emberPileLightPOI2']">
+		<property name="HeatMapTime" value="5000"></property>
+</append>
+<append xpath="/blocks/block[@name='emberPileLightPOI2']">
+		<property name="HeatMapFrequency" value="1000"></property>
+</append>
+<append xpath="/blocks/block[@name='wallTorchLight']">
+		<property name="HeatMapStrength" value="10"/>
+</append>
+<append xpath="/blocks/block[@name='wallTorchLight']">
+		<property name="HeatMapTime" value="5000"></property>
+</append>
+<append xpath="/blocks/block[@name='wallTorchLight']">
+		<property name="HeatMapFrequency" value="1000"></property>
+</append>
+<!-- <append xpath="/blocks/block[@name='porchLight01']">
+		<property name="HeatMapStrength" value="10"/>
+</append>
+<append xpath="/blocks/block[@name='porchLight01']">
+		<property name="HeatMapTime" value="5000"></property>
+</append>
+<append xpath="/blocks/block[@name='porchLight01']">
+		<property name="HeatMapFrequency" value="1000"></property>
+</append>
+<append xpath="/blocks/block[@name='lanternDecorLight']">
+		<property name="HeatMapStrength" value="10"/>
+</append>
+<append xpath="/blocks/block[@name='lanternDecorLight']">
+		<property name="HeatMapTime" value="5000"></property>
+</append>
+<append xpath="/blocks/block[@name='lanternDecorLight']">
+		<property name="HeatMapFrequency" value="1000"></property>
+</append>
+<append xpath="/blocks/block[@name='flashlightDecor']">
+		<property name="HeatMapStrength" value="10"/>
+</append>
+<append xpath="/blocks/block[@name='flashlightDecor']">
+		<property name="HeatMapTime" value="250"></property>
+</append>
+<append xpath="/blocks/block[@name='flashlightDecor']">
+		<property name="HeatMapFrequency" value="50"></property>
+</append>
+<append xpath="/blocks/block[@name='spotlightNailedDownPOI']">
+		<property name="HeatMapStrength" value="10"/>
+</append>
+<append xpath="/blocks/block[@name='spotlightNailedDownPOI']">
+		<property name="HeatMapTime" value="250"></property>
+</append>
+<append xpath="/blocks/block[@name='spotlightNailedDownPOI']">
+		<property name="HeatMapFrequency" value="50"></property>
+</append>
+<append xpath="/blocks/block[@name='workLightPOI']">
+		<property name="HeatMapStrength" value="10"/>
+</append>
+<append xpath="/blocks/block[@name='workLightPOI']">
+		<property name="HeatMapTime" value="250"></property>
+</append> -->
+<!-- <append xpath="/blocks/block[@name='workLightPOI']">
+		<property name="HeatMapFrequency" value="50"></property>
+</append> -->
+<!-- <append xpath="/blocks/block[@name='burningBarrel']">
+		<property name="HeatMapStrength" value="10"/>
+</append>
+<append xpath="/blocks/block[@name='burningBarrel']">
+		<property name="HeatMapTime" value="250"></property>
+</append>
+<append xpath="/blocks/block[@name='burningBarrel']">
+		<property name="HeatMapFrequency" value="50"></property>
+</append> -->
+<!-- <append xpath="/blocks/block[@name='wallTorchLightPlayer']">
+		<property name="HeatMapStrength" value="10"/>
+</append>
+<append xpath="/blocks/block[@name='wallTorchLightPlayer']">
+		<property name="HeatMapTime" value="250"></property>
+</append>
+<append xpath="/blocks/block[@name='wallTorchLightPlayer']">
+		<property name="HeatMapFrequency" value="50"></property>
+</append> -->
+
+</configs>

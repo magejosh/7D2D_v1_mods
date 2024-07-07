@@ -1,0 +1,7 @@
+<configs>
+	<set xpath="/blocks/block[@name='campfire']/property[@name='HeatMapStrength']/@value">66.6</set>
+	<!-- <set xpath="/blocks/block[@name='campfire']/property[@name='HeatMapTime']/@value">250</set>  -->
+	<!-- <set xpath="/blocks/block[@name='campfire']/property[@name='HeatMapFrequency']/@value">100</set>  -->
+	<set xpath="/blocks/block[@name='campfire']/property[@name='BuffsWhenWalkedOn']/@value">buffBurningFlamingArrow</set> 
+
+</configs>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<Name value="Death_by_Light" />
+	<DisplayName value="Death by Light" />
+	<Description value="Add heatmap strength to all blocks with the light property" />
+	<Author value="magejosh inspired by crainbramp" />
+	<Version value="1.0.0.0" />
+    <Website value="https://mageworks.studio" />
+</xml>

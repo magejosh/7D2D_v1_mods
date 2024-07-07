@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<Name value="Death_by_Campfire" />
+	<DisplayName value="Death by Campfire" />
+	<Description value="More heatmap strength from campfires and they set you on fire for longer now" />
+	<Author value="magejosh" />
+	<Version value="1.0.0.0" />
+    <Website value="https://mageworks.studio" />
+</xml>
