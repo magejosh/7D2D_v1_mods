@@ -6,7 +6,9 @@
 		
         <property name="FoodSpoilage" value="true" />
 		<!-- Turns on Food spoilage-->
-
+		<property name="UseAlternateItemValue" value="false" />
+		<!-- see SCore readme notes for Version: 1.0.15.1402 for more details on alt item value, default is false -->
+		
         <property name="Toolbelt" value="6" />
 		<!-- Penalty of 3 points per spoilage tick -->
 		

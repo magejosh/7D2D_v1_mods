@@ -8,7 +8,7 @@ Provides a template settings file that uses XPath to configure the desired 0-SCo
 
 ## Dependent and Compatible Modlets
 
-**This modlet requires version `1.0.10.1107` of the `0-SCore` modlet.**
+**This modlet requires version `1.0.15.1402` of the `0-SCore` modlet.**
 Earlier versions will not work!
 You can find 0-SCore here: https://github.com/SphereII/SphereII.Mods/tree/1.0e
 
@@ -36,6 +36,7 @@ Each property node in that block is devoted to one feature, and that node has ch
 that hold the configuration data.
 
 ### Roadmap
+As of SCore Version 1.0.15.1402 and going forward this modlet will match its version numbers on future updates with SCore to make easy identification of compatibility more transparent and intuitive for users.
 Intention is to expand the details in this README to include tips and tricks for using SCore as well as explanation of the various features and NPCmod when it releases.
 
 ## Credits
