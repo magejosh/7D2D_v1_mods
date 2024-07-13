@@ -26,7 +26,9 @@
 		
         <property name="SpoiledItem" value="foodRottingFlesh" />
 		<!-- When spoiled, this item will turn into this item.-->
-		
+				
+		<!-- Determines if the entire stack spoils at the same time -->
+		<property name="FullStackSpoil" value="false" />		
     </set>
 	
     <set xpath="/blocks/block[@name='ConfigFeatureBlock']/property[@class='AdvancedSoundFeatures']">

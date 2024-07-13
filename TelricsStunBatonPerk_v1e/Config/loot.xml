@@ -1,0 +1,28 @@
+<configs>
+<append xpath="/lootcontainers/lootgroup[@name='perkBooks']">
+	<item name="bookBatonHarvest"/>
+	<item name="bookBatonDamageIncrease"/>
+	<item name="bookBatonFire"/>
+	<item name="bookBatonRecharge"/>
+	<item name="bookBatonRange"/>
+	<item name="bookBatonT3PlasmaBaton"/>
+	<item name="bookBatonAutoRecharger"/>
+</append>
+<!-- <append xpath="/lootcontainers/lootgroup[@name='perkBooksT1']">
+	<item name="bookBatonHarvest"/>
+	<item name="bookBatonDamageIncrease"/>
+	<item name="bookBatonFire"/>
+	<item name="bookBatonRecharge"/>
+	<item name="bookBatonRange"/>
+</append>
+<append xpath="/lootcontainers/lootgroup[@name='perkBooksT2']">
+	<item name="bookBatonHarvest"/>
+	<item name="bookBatonDamageIncrease"/>
+	<item name="bookBatonFire"/>
+	<item name="bookBatonRecharge"/>
+	<item name="bookBatonRange"/>
+</append> -->
+
+
+
+</configs>

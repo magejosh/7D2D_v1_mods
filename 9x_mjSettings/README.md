@@ -8,7 +8,7 @@ Provides a template settings file that uses XPath to configure the desired 0-SCo
 
 ## Dependent and Compatible Modlets
 
-**This modlet requires version `1.0.15.1402` of the `0-SCore` modlet.**
+**This modlet requires version `1.0.18.2207` of the `0-SCore` modlet.**
 Earlier versions will not work!
 You can find 0-SCore here: https://github.com/SphereII/SphereII.Mods/tree/1.0e
 

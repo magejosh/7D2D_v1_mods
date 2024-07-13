@@ -1,0 +1,49 @@
+<configs>
+<append xpath="/buffs">
+<!-- Baton Buffs -->
+	<buff name="buffBatonDamageIncrease" name_key="buffBatonDamageIncreasePlayerName"  description_key="buffBatonDamageIncreasePlayerDesc" icon="ui_game_symbol_electric_power" icon_color="43,135,235" >
+		<stack_type value="replace"/>
+		<duration value="1"/>
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffBatonDamageIncreasePlayer" target="selfAOE" target_tags="player" range="20"/>
+		</effect_group>
+	</buff>
+	<buff name="buffBatonDamageIncreasePlayer" name_key="buffBatonDamageIncreasePlayerName"  description_key="buffBatonDamageIncreasePlayerDesc" icon="ui_game_symbol_electric_power" icon_color="43,135,235" >
+		<stack_type value="replace"/>
+		<duration value="2"/>
+		<effect_group>
+			<passive_effect name="EntityDamage" operation="perc_add" value=".3" tags="weapon"/>
+		</effect_group>
+	</buff>
+	<buff name="buffBatonRecharge" hidden="true">
+		<stack_type value="ignore"/>
+		<duration value=".5"/>
+		<effect_group>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="20"/>
+			<triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar=".stunBatonCharge" target="self" operation="add" value="10"/>
+		</effect_group>
+	</buff>
+	<buff name="buffBatonAOE" name_key="buffArmSprainedFallTrigger" icon="ui_game_symbol_critical" icon_color="255,0,0" hidden="true">
+		<stack_type value="replace"/>
+		<duration value="1"/>
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffShocked" target="self" />
+			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffBurningElement" target="self" />
+		</effect_group>
+	</buff>
+	<buff name="buffBatonAutoRecharger" hidden="true">
+		<stack_type value="ignore"/>
+		<update_rate value="1"/>
+		<duration value="0"/>
+		<effect_group>
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="LT" value="40"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="20"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".stunBatonCharge" target="self" operation="add" value="1"/>
+		</effect_group>
+	</buff>
+<!-- tests -->
+</append>
+
+
+
+</configs>

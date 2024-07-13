@@ -1,0 +1,59 @@
+Key,English,Japanese
+
+
+--------------Items----------------
+bookBatonHarvest,"[e7a729]SNA01- Stun Baton: Electrical Surge[-]","[e7a729]Japanese[-]"
+bookBatonDamageIncrease,"[e7a729]SNA02- Stun Baton: Electrical Discharge[-]","[e7a729]Japanese[-]"
+bookBatonFire,"[e7a729]SNA03- Stun Baton: Electrical Fire[-]","[e7a729]Japanese[-]"
+bookBatonRecharge,"[e7a729]SNA04- Stun Baton: Electrical Recharge[-]","[e7a729]Japanese[-]"
+bookBatonRange,"[e7a729]SNA05- Stun Baton: Electrical Reach[-]","[e7a729]Japanese[-]"
+bookBatonT3PlasmaBaton,"[e7a729]SNA06- Plasma Baton Mk1[-]","[e7a729]Japanese[-]"
+bookBatonAutoRecharger,"[e7a729]SNA07- Stun Baton: Auto-Recharger Mod[-]","[e7a729]Japanese[-]"
+
+perkBatonName,"[e7a729]Shock and Awe[-]","[e7a729]Japanese[-]"
+perkBatonDesc,"[e7a729]Learn how to control electricity with these books.[-]","[e7a729]Japanese[-]"
+perkBatonHarvestLongDesc,"[e7a729]While at full charge, you have 15% additional movement speed.[-]","[e7a729]Japanese[-]"
+perkBatonHarvestDesc,"[e7a729]Electrical Surge[-]","[e7a729]Japanese[-]"
+
+perkBatonDamageIncreaseLongDesc,"[e7a729]Victims of your electric charge attacks increase nearby ally damage by 30% for 2 seconds.[-]","[e7a729]Japanese[-]"
+perkBatonDamageIncreaseDesc,"[e7a729]Overload[-]","[e7a729]Japanese[-]"
+
+perkBatonFireLongDesc,"[e7a729]Spark an electric fire on the target when you attack with an electric charge.[-]","[e7a729]Japanese[-]"
+perkBatonFireDesc,"[e7a729]Fiery Spark[-]","[e7a729]Japanese[-]"
+
+perkBatonRechargeLongDesc,"[e7a729]Using an electric charge has a 20% chance to recharge your baton instantly.[-]","[e7a729]Japanese[-]"
+perkBatonRechargeDesc,"[e7a729]Pylon[-]","[e7a729]Japanese[-]"
+
+perkBatonRangeLongDesc,"[e7a729]Your full charge attacks have 5 meters increased range.[-]","[e7a729]Japanese[-]"
+perkBatonRangeDesc,"[e7a729]Electric Focus[-]","[e7a729]Japanese[-]"
+
+bookBatonT3PlasmaBatonLongDesc,"[e7a729]The Plasma Arc Baton Mark 1[-] is a superior stun baton prototype unit under limited release by Yo-Yo-Dyne Tech a year before the apocalypse and sold exclusively at S-Mart. It comes with a built-in plasma arc reactor to allow it a faster charge capacity than the normal stun baton as well as greater strength from carbon fiber and titanium reinforcement. On top of that it has build in gyroscopes and AI-assistance to allow cross-skill assistance when weilding it. If you have levels in Electrocutioner, Deep Cuts, or Pummel Pete you will find yourself with the ability to cause maximum damage with this technological nightmare of melee combat. [e7a729]Remember, shop smart, Shop S-Mart.[-]","[e7a729]Japanese[-]"
+bookBatonT3PlasmaBatonDesc,"[e7a729]Plasma Arc Baton Mk1[-]","[e7a729]Japanese[-]"
+
+meleeWpnBatonT3PlasmaBatonLongDesc,"[e7a729]The Plasma Arc Baton Mark 1[-] is a superior stun baton prototype unit under limited release by Yo-Yo-Dyne Tech a year before the apocalypse and sold exclusively at S-Mart. It comes with a built-in plasma arc reactor to allow it a faster charge capacity than the normal stun baton as well as greater strength from carbon fiber and titanium reinforcement. On top of that it has build in gyroscopes and AI-Enabled NPU's to allow cross-skill assistance when weilding it. If you have levels in Electrocutioner, Deep Cuts, or Pummel Pete you will find yourself with the ability to cause maximum damage with this technological nightmare of melee combat. [e7a729]Remember, shop smart, Shop S-Mart.[-]","[e7a729]Japanese[-]"
+meleeWpnBatonT3PlasmaBatonDesc,"[e7a729]Plasma Baton Mk1[-]","[e7a729]Japanese[-]"
+meleeWpnBatonT3PlasmaBaton,"[e7a729]Plasma Baton Mk1[-]","[e7a729]Japanese[-]"
+perkBatonT3PlasmaBatonLongDesc,"[e7a729]The Plasma Arc Baton Mark 1[-] is a superior stun baton prototype unit under limited release by Yo-Yo-Dyne Tech a year before the apocalypse and sold exclusively at S-Mart. It comes with a built-in plasma arc reactor to allow it a faster charge capacity than the normal stun baton as well as greater strength from carbon fiber and titanium reinforcement. On top of that it has build in gyroscopes and AI-Enabled NPU's to allow cross-skill assistance when weilding it. If you have levels in Electrocutioner, Deep Cuts, or Pummel Pete you will find yourself with the ability to cause maximum damage with this technological nightmare of melee combat. [e7a729]Remember, shop smart, Shop S-Mart.[-]","[e7a729]Japanese[-]"
+perkBatonT3PlasmaBatonDesc,"[e7a729]Plasma Baton Mk1[-]","[e7a729]Japanese[-]"
+
+bookBatonAutoRechargerLongDesc,"[e7a729]Auto-Recharger Mod[-] for the stun baton class of weapons. Will automatically recharge the stun from just holding the baton with this mod installed.The stun becomes overcharged from this units installation, allowing it to operate at a higher current output consistently, which leads to living tissues catching fire from contact. [e7a729]Don't Touch it.[-]","[e7a729]Japanese[-]"
+bookBatonAutoRechargerDesc,"[e7a729]Auto-Recharger Mod[-]","[e7a729]Japanese[-]"
+
+perkBatonModderLongDesc,"[e7a729]Auto-Recharger Mod[-] for the stun baton class of weapons. Will automatically recharge the stun from just holding the baton with this mod installed.The stun becomes overcharged from this units installation, allowing it to operate at a higher current output consistently, which leads to living tissues catching fire from contact. [e7a729]Don't Touch it.[-]","[e7a729]Japanese[-]"
+perkBatonModderDesc,"[e7a729]Auto-Recharger Mod[-]","[e7a729]Japanese[-]"
+
+modMeleeStunBatonRechargerLongDesc,"[e7a729]Auto-Recharger Mod[-] for the stun baton class of weapons. Will automatically recharge the stun from just holding the baton with this mod installed.The stun becomes overcharged from this units installation, allowing it to operate at a higher current output consistently, which leads to living tissues catching fire from contact more often than not. [e7a729]Don't Touch it.[-]","[e7a729]Japanese[-]"
+modMeleeStunBatonRechargerDesc,"[e7a729]Auto-Recharger Mod[-] for the stun baton class of weapons. Will automatically recharge the stun from just holding the baton with this mod installed.The stun becomes overcharged from this units installation, allowing it to operate at a higher current output consistently, which leads to living tissues catching fire from contact more often than not. [e7a729]Don't Touch it.[-]","[e7a729]Japanese[-]"
+modMeleeStunBatonRecharger,"[e7a729]Auto-Recharger Mod[-]","[e7a729]Japanese[-]"
+
+perkBatonCompleteLongDesc,"[e7a729]Using a charge attack will spread shock and fire to all enemies within 3 meters.[-]","[e7a729]Japanese[-]"
+perkBatonCompleteDesc,"[e7a729]Mastery: Chain Lightning[-]","[e7a729]Japanese[-]"
+
+
+------------Buffs---------------------
+buffBatonDamageIncreasePlayerName,"[e7a729]Electrical Discharge[-]","[e7a729]Japanese[-]"
+buffBatonDamageIncreasePlayerDesc,"[e7a729]30% increased damage for 2 seconds.[-]","[e7a729]Japanese[-]"
+
+
+
+

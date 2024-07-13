@@ -2,7 +2,7 @@
 Mods and modlets (small modifications) for the game 7 Days To Die (aka 7D2D):
 [7daystodie.com](https://7daystodie.com/)
 
-I am user [magejosh](https://community.7daystodie.com/profile/51265-khzmusik/) on the 7D2D forums.
+I am user [magejosh](https://community.7daystodie.com/profile/85994-magejosh/) on the 7D2D forums.
 I borrowed this README format from user [khzmusik](https://community.7daystodie.com/profile/51265-khzmusik/) on the 7D2D forums.
 
 By convention, modlet authors create new repos for each alpha version of 7D2D.
@@ -182,7 +182,7 @@ Examples:
 
 ## Support
 The easiest way to contact me is
-[through the 7D2D forums](https://community.7daystodie.com/profile/51265-khzmusik/).
+[through the 7D2D forums](https://community.7daystodie.com/profile/85994-magejosh/).
 
 If desired, you can also raise an issue in GitLab.
 

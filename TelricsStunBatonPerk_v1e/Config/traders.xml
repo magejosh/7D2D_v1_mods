@@ -1,0 +1,21 @@
+<configs>
+<append xpath="/traders/trader_item_groups/trader_item_group[@name='perkBooks']">
+	<item name="bookBatonHarvest"/>
+	<item name="bookBatonDamageIncrease"/>
+	<item name="bookBatonFire"/>
+	<item name="bookBatonRecharge"/>
+	<item name="bookBatonRange"/>
+	<item name="bookBatonT3PlasmaBaton"/>
+	<item name="bookBatonAutoRecharger"/>
+</append>
+
+<append xpath="/traders/trader_item_groups/trader_item_group[@name='groupMeleeAll']">
+	<item name="meleeWpnBatonT3PlasmaBaton" prob="0.25"/>
+</append>
+
+<append xpath="/traders/trader_item_groups/trader_item_group[@name='groupMeleeMods']">
+	<item name="modMeleeStunBatonRecharger" prob="0.1"/>
+</append>
+
+
+</configs>

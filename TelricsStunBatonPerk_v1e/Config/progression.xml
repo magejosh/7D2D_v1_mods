@@ -1,0 +1,145 @@
+<configs>
+<append xpath="/progression/skills">
+	<!-- This adds a new perk book to collect for batons. -->
+	<book_group name="skillBaton" parent="attBooks" name_key="perkBatonName" desc_key="perkBatonDesc" long_desc_key="perkBookGroupLongDesc" icon="ui_game_symbol_electric_power"><effect_group/></book_group>
+</append>
+<insertAfter xpath="/progression/crafting_skills/crafting_skill[@name='craftingRobotics']/display_entry[@item='gunBotT3JunkDrone']">
+		<display_entry item="meleeWpnBatonT3PlasmaBaton" unlock_level="26,30,35,40,45,50" />
+</insertAfter>
+
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingRobotics']/effect_group">
+			<passive_effect name="CraftingTier" operation="base_add" level="31,49,63,81,93" value="1,2,3,4,5" tags="meleeWpnBatonT3PlasmaBaton"/>
+</append>
+
+<append xpath="/progression/perks">
+<!-- Baton Books -->
+	<book name="perkBatonHarvest" parent="skillBaton" max_level="1" base_skill_point_cost="0" name_key="perkBatonHarvest" desc_key="perkBatonHarvestDesc" long_desc_key="perkBatonHarvestLongDesc">
+		<effect_group>
+			<requirement name="CVarCompare" cvar="stunBatonCharge" operation="GTE" value="6"/>
+			<requirement name="HoldingItemHasTags" tags="perkElectrocutioner"/>
+			<requirement name="ProgressionLevel" progression_name="perkBatonHarvest" operation="Equals" value="1"/>
+				<passive_effect name="WalkSpeed" operation="perc_add" value=".15"/>
+				<passive_effect name="RunSpeed" operation="perc_add" value=".15"/>
+		</effect_group>
+	</book>
+	<book name="perkBatonDamageIncrease" parent="skillBaton" max_level="1" base_skill_point_cost="0" name_key="perkBatonDamageIncrease" desc_key="perkBatonDamageIncreaseDesc" long_desc_key="perkBatonDamageIncreaseLongDesc">
+		<effect_group>
+			<requirement name="CVarCompare" cvar="stunBatonCharge" operation="GTE" value="5"/>
+			<requirement name="!EntityTagCompare" target="other" tags="player"/>
+			<requirement name="HoldingItemHasTags" tags="perkElectrocutioner"/>
+			<requirement name="ProgressionLevel" progression_name="perkBatonDamageIncrease" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" buff="buffBatonDamageIncrease" target="other"/>
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" buff="buffBatonDamageIncrease" target="other"/>
+		</effect_group>
+	</book>
+	<book name="perkBatonFire" parent="skillBaton" max_level="1" base_skill_point_cost="0" name_key="perkBatonFire" desc_key="perkBatonFireDesc" long_desc_key="perkBatonFireLongDesc">
+		<effect_group>
+			<requirement name="CVarCompare" cvar="stunBatonCharge" operation="GTE" value="6"/>
+			<requirement name="!EntityTagCompare" target="other" tags="player"/>
+			<requirement name="HoldingItemHasTags" tags="perkElectrocutioner"/>
+			<requirement name="ProgressionLevel" progression_name="perkBatonFire" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" buff="buffBurningElement" target="other"/>
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" buff="buffBurningElement" target="other"/>
+		</effect_group>
+	</book>
+	<book name="perkBatonRecharge" parent="skillBaton" max_level="1" base_skill_point_cost="0" name_key="perkBatonRecharge" desc_key="perkBatonRechargeDesc" long_desc_key="perkBatonRechargeLongDesc">
+		<effect_group>
+			<requirement name="CVarCompare" cvar="stunBatonCharge" operation="GTE" value="6"/>
+			<requirement name="!EntityTagCompare" target="other" tags="player"/>
+			<requirement name="HoldingItemHasTags" tags="perkElectrocutioner"/>
+			<requirement name="ProgressionLevel" progression_name="perkBatonRecharge" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="buffBatonRecharge" target="self"/>
+				<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="buffBatonRecharge" target="self"/>
+		</effect_group>
+	</book>
+	<book name="perkBatonRange" parent="skillBaton" max_level="1" base_skill_point_cost="0" name_key="perkBatonRange" desc_key="perkBatonRangeDesc" long_desc_key="perkBatonRangeLongDesc">
+		<effect_group>
+			<requirement name="CVarCompare" cvar="stunBatonCharge" operation="GTE" value="6"/>
+			<requirement name="HoldingItemHasTags" tags="perkElectrocutioner"/>
+			<requirement name="ProgressionLevel" progression_name="perkBatonRange" operation="Equals" value="1"/>
+				<passive_effect name="MaxRange" operation="base_add" value="5" tags="perkElectrocutioner"/>
+		</effect_group>
+	</book>
+	
+	
+	<book name="perkBatonT3PlasmaBaton" parent="skillBaton" max_level="1" base_skill_point_cost="0" name_key="perkBatonT3PlasmaBaton" desc_key="perkBatonT3PlasmaBatonDesc" long_desc_key="perkBatonT3PlasmaBatonLongDesc">
+		<effect_group>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="meleeWpnBatonT3PlasmaBaton"/>
+			
+			<!-- Increase the chance to find batons and turrets with each perk rank -->
+			<passive_effect name="LootProb" operation="perc_add" value="2" tags="roboticsSkill"/>
+
+			<!-- Increase the chance to find robotic crafting skill magazines with each perk rank up to crafting skill 100 -->
+			<passive_effect name="LootProb" operation="perc_add" value="2" tags="roboticsCSM">
+				<requirement name="ProgressionLevel" progression_name="craftingRobotics" operation="LT" value="100"/>
+			</passive_effect>
+
+			<!-- Once robotic crafting skill reaches 100, set the probability bonus of finding robotic crafting skill magazines to 0 -->
+			<passive_effect name="LootProb" operation="base_set" value="1" tags="roboticsCSM">
+				<requirement name="ProgressionLevel" progression_name="craftingRobotics" operation="Equals" value="100"/>
+			</passive_effect>
+
+			<!-- Increase the chance to find Tech Junkie books until each book is read -->
+			<passive_effect name="LootProb" operation="perc_add" value="2" tags="techJunkieProb">
+				<requirement name="ProgressionLevel" progression_name="perkTechJunkie8Complete" operation="LT" value="1"/>
+			</passive_effect>
+
+			<!-- When all Tech Junkie books have been read, set the probability bonus of finding them to 0 -->
+			<passive_effect name="LootProb" operation="perc_add" value="1" tags="techJunkieProb">
+				<requirement name="ProgressionLevel" progression_name="perkTechJunkie8Complete" operation="Equals" value="1"/>
+			</passive_effect>
+		</effect_group>
+	</book>
+	
+	
+	<book name="perkBatonModder" parent="skillBaton" max_level="1" base_skill_point_cost="0" name_key="perkBatonModder" desc_key="perkBatonModderDesc" long_desc_key="perkBatonModderLongDesc">
+		<effect_group>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="modMeleeStunBatonRecharger"/>
+			
+			<!-- Increase the chance to find batons and turrets with each perk rank -->
+			<passive_effect name="LootProb" operation="perc_add" value="2" tags="roboticsSkill"/>
+
+			<!-- Increase the chance to find robotic crafting skill magazines with each perk rank up to crafting skill 100 -->
+			<passive_effect name="LootProb" operation="perc_add" value="2" tags="roboticsCSM">
+				<requirement name="ProgressionLevel" progression_name="craftingRobotics" operation="LT" value="100"/>
+			</passive_effect>
+
+			<!-- Once robotic crafting skill reaches 100, set the probability bonus of finding robotic crafting skill magazines to 0 -->
+			<passive_effect name="LootProb" operation="base_set" value="1" tags="roboticsCSM">
+				<requirement name="ProgressionLevel" progression_name="craftingRobotics" operation="Equals" value="100"/>
+			</passive_effect>
+
+			<!-- Increase the chance to find Tech Junkie books until each book is read -->
+			<passive_effect name="LootProb" operation="perc_add" value="2" tags="techJunkieProb">
+				<requirement name="ProgressionLevel" progression_name="perkTechJunkie8Complete" operation="LT" value="1"/>
+			</passive_effect>
+
+			<!-- When all Tech Junkie books have been read, set the probability bonus of finding them to 0 -->
+			<passive_effect name="LootProb" operation="perc_add" value="1" tags="techJunkieProb">
+				<requirement name="ProgressionLevel" progression_name="perkTechJunkie8Complete" operation="Equals" value="1"/>
+			</passive_effect>
+		</effect_group>
+	</book>
+	
+	
+	<book name="perkBatonComplete" parent="skillBaton" max_level="1" base_skill_point_cost="0" name_key="perkBatonComplete" desc_key="perkBatonCompleteDesc" long_desc_key="perkBatonCompleteLongDesc">
+		<effect_group>
+			<requirement name="CVarCompare" cvar="stunBatonCharge" operation="GTE" value="6"/>
+			<requirement name="!EntityTagCompare" target="other" tags="player"/>
+			<requirement name="HoldingItemHasTags" tags="perkElectrocutioner"/>
+			<requirement name="ProgressionLevel" progression_name="perkBatonComplete" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" buff="buffBatonAOE" target="other"/>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" buff="buffBatonAOE" target="otherAOE" target_tags="enemy" range="5"/>
+				
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" buff="buffBatonAOE" target="other"/>
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" buff="buffBatonAOE" target="otherAOE" target_tags="enemy" range="6"/>
+		</effect_group>
+	</book>
+	
+	
+</append>
+
+
+
+
+</configs>
