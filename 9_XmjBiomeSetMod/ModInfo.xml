@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<Name value="mjPlays_SetBiome_Core" />
+	<DisplayName value="mj Set Biome Overhaul Core Settings" />		
+	<Description value="Core Biome Setup for Overhauls. Remember to change these details for your overhaul project." />
+	<Author value="magejosh" />
+	<Version value="1.0.0.0" />
+	<Website value="https://mageworks.studio" />
+</xml>

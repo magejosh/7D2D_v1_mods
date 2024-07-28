@@ -15,7 +15,7 @@
 <!-- Baton Books -->
 	<book name="perkBatonHarvest" parent="skillBaton" max_level="1" base_skill_point_cost="0" name_key="perkBatonHarvest" desc_key="perkBatonHarvestDesc" long_desc_key="perkBatonHarvestLongDesc">
 		<effect_group>
-			<requirement name="CVarCompare" cvar="stunBatonCharge" operation="GTE" value="6"/>
+			<requirement name="CVarCompare" cvar="stunBatonCharge" operation="GTE" value="4"/>
 			<requirement name="HoldingItemHasTags" tags="perkElectrocutioner"/>
 			<requirement name="ProgressionLevel" progression_name="perkBatonHarvest" operation="Equals" value="1"/>
 				<passive_effect name="WalkSpeed" operation="perc_add" value=".15"/>
@@ -24,7 +24,7 @@
 	</book>
 	<book name="perkBatonDamageIncrease" parent="skillBaton" max_level="1" base_skill_point_cost="0" name_key="perkBatonDamageIncrease" desc_key="perkBatonDamageIncreaseDesc" long_desc_key="perkBatonDamageIncreaseLongDesc">
 		<effect_group>
-			<requirement name="CVarCompare" cvar="stunBatonCharge" operation="GTE" value="5"/>
+			<requirement name="CVarCompare" cvar="stunBatonCharge" operation="GTE" value="4"/>
 			<requirement name="!EntityTagCompare" target="other" tags="player"/>
 			<requirement name="HoldingItemHasTags" tags="perkElectrocutioner"/>
 			<requirement name="ProgressionLevel" progression_name="perkBatonDamageIncrease" operation="Equals" value="1"/>
@@ -34,7 +34,7 @@
 	</book>
 	<book name="perkBatonFire" parent="skillBaton" max_level="1" base_skill_point_cost="0" name_key="perkBatonFire" desc_key="perkBatonFireDesc" long_desc_key="perkBatonFireLongDesc">
 		<effect_group>
-			<requirement name="CVarCompare" cvar="stunBatonCharge" operation="GTE" value="6"/>
+			<requirement name="CVarCompare" cvar="stunBatonCharge" operation="GTE" value="4"/>
 			<requirement name="!EntityTagCompare" target="other" tags="player"/>
 			<requirement name="HoldingItemHasTags" tags="perkElectrocutioner"/>
 			<requirement name="ProgressionLevel" progression_name="perkBatonFire" operation="Equals" value="1"/>
@@ -44,7 +44,7 @@
 	</book>
 	<book name="perkBatonRecharge" parent="skillBaton" max_level="1" base_skill_point_cost="0" name_key="perkBatonRecharge" desc_key="perkBatonRechargeDesc" long_desc_key="perkBatonRechargeLongDesc">
 		<effect_group>
-			<requirement name="CVarCompare" cvar="stunBatonCharge" operation="GTE" value="6"/>
+			<requirement name="CVarCompare" cvar="stunBatonCharge" operation="GTE" value="4"/>
 			<requirement name="!EntityTagCompare" target="other" tags="player"/>
 			<requirement name="HoldingItemHasTags" tags="perkElectrocutioner"/>
 			<requirement name="ProgressionLevel" progression_name="perkBatonRecharge" operation="Equals" value="1"/>
@@ -54,7 +54,7 @@
 	</book>
 	<book name="perkBatonRange" parent="skillBaton" max_level="1" base_skill_point_cost="0" name_key="perkBatonRange" desc_key="perkBatonRangeDesc" long_desc_key="perkBatonRangeLongDesc">
 		<effect_group>
-			<requirement name="CVarCompare" cvar="stunBatonCharge" operation="GTE" value="6"/>
+			<requirement name="CVarCompare" cvar="stunBatonCharge" operation="GTE" value="4"/>
 			<requirement name="HoldingItemHasTags" tags="perkElectrocutioner"/>
 			<requirement name="ProgressionLevel" progression_name="perkBatonRange" operation="Equals" value="1"/>
 				<passive_effect name="MaxRange" operation="base_add" value="5" tags="perkElectrocutioner"/>
@@ -124,7 +124,7 @@
 	
 	<book name="perkBatonComplete" parent="skillBaton" max_level="1" base_skill_point_cost="0" name_key="perkBatonComplete" desc_key="perkBatonCompleteDesc" long_desc_key="perkBatonCompleteLongDesc">
 		<effect_group>
-			<requirement name="CVarCompare" cvar="stunBatonCharge" operation="GTE" value="6"/>
+			<requirement name="CVarCompare" cvar="stunBatonCharge" operation="GTE" value="4"/>
 			<requirement name="!EntityTagCompare" target="other" tags="player"/>
 			<requirement name="HoldingItemHasTags" tags="perkElectrocutioner"/>
 			<requirement name="ProgressionLevel" progression_name="perkBatonComplete" operation="Equals" value="1"/>
