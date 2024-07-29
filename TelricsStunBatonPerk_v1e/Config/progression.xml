@@ -4,7 +4,7 @@
 	<book_group name="skillBaton" parent="attBooks" name_key="perkBatonName" desc_key="perkBatonDesc" long_desc_key="perkBookGroupLongDesc" icon="ui_game_symbol_electric_power"><effect_group/></book_group>
 </append>
 <insertAfter xpath="/progression/crafting_skills/crafting_skill[@name='craftingRobotics']/display_entry[@item='gunBotT3JunkDrone']">
-		<display_entry item="meleeWpnBatonT3PlasmaBaton" unlock_level="26,30,35,40,45,50" />
+		<display_entry item="meleeWpnBatonT3PlasmaBaton" unlock_level="1,31,49,63,81,93" />
 </insertAfter>
 
 <append xpath="/progression/crafting_skills/crafting_skill[@name='craftingRobotics']/effect_group">
