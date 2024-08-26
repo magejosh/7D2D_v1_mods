@@ -1,0 +1,430 @@
+<configs>
+<append xpath="/progression/skills">
+	<!-- This adds a new perk book to collect for tools and sledgehammers. -->
+	<book_group name="skillToolTime" parent="attBooks" name_key="perkToolTimeName" desc_key="perkToolTimeDesc" long_desc_key="perkBookGroupLongDesc" icon="ui_game_symbol_hammer">
+
+		<effect_group>
+			<requirement name="ItemHasTags" tags="perkToolTime"/>
+			<requirement name="PerksUnlocked" skill_name="skillToolTime" operation="GTE" value="1"/>
+			<requirement name="PerksUnlocked" skill_name="skillToolTime" operation="LT" value="7"/>
+			<requirement name="ProgressionLevel" progression_name="perkToolTimeDoubleStep" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="AddBuff" buff="buffToolTimeSledgeHarvest"/>
+				<!-- <triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="buffToolTimeSledgeHarvest"/> -->
+		</effect_group>
+	
+		<effect_group/></book_group>
+</append>
+<insertAfter xpath="/progression/crafting_skills/crafting_skill[@name='craftingSledgehammers']/display_entry[@item='meleeWpnSledgeT3SteelSledgehammer']">
+		<display_entry item="meleeWpnSledgeT3PoweredSledgehammer" unlock_level="1,31,49,63,81,93" />
+</insertAfter>
+
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingSledgehammers']/effect_group">
+			<passive_effect name="CraftingTier" operation="base_add" level="31,49,63,81,93" value="1,2,3,4,5" tags="meleeWpnSledgeT3PoweredSledgehammer"/>
+</append>
+
+<append xpath="/progression/perks">
+<!-- ToolTime Books -->
+	<book name="perkToolTimeDoubleStep" parent="skillToolTime" max_level="1" base_skill_point_cost="0" name_key="perkToolTimeDoubleStep" desc_key="perkToolTimeDoubleStepDesc" long_desc_key="perkToolTimeDoubleStepLongDesc">
+		<effect_group>
+			<requirement name="HoldingItemHasTags" tags="perkToolTime"/>
+			<requirement name="ProgressionLevel" progression_name="perkToolTimeDoubleStep" operation="Equals" value="1"/>
+				<passive_effect name="WalkSpeed" operation="perc_add" value=".15"/>
+				<passive_effect name="RunSpeed" operation="perc_add" value=".15"/>
+		</effect_group>
+		<effect_group>
+			<requirement name="HoldingItemHasTags" tags="perkToolTime"/>
+			<requirement name="ProgressionLevel" progression_name="perkToolTimeDamageIncrease" operation="Equals" value="1"/>
+				<passive_effect name="BlockDamage" operation="perc_add" level="1" value=".02" tags="perkToolTime"/>
+				<passive_effect name="EntityDamage" operation="perc_add" level="1" value=".1," tags="perkToolTime"/>			
+				<passive_effect name="EntityDamage" operation="base_add" level="1" value="2," tags="perkToolTime"/>			
+				
+				<passive_effect name="AttacksPerMinute" operation="perc_add" level="1" value=".02" tags="perkToolTime"/>
+
+				<passive_effect name="StaminaLoss" operation="perc_add" level="1" value="-.1"/>
+				<passive_effect name="StaminaLoss" operation="perc_add" level="1" value="-.05" tags="secondary"/>
+				<passive_effect name="HarvestCount" operation="perc_add" level="1" value=".05" tags="allHarvest"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" level="1" value="-.15" tags="Harvesting"/>
+		</effect_group>
+		<effect_group>
+			<requirement name="HoldingItemHasTags" tags="perkSkullCrusher"/>
+			<requirement name="ProgressionLevel" progression_name="perkToolTimeDoubleStep" operation="Equals" value="1"/>		
+				<passive_effect name="HarvestCount" operation="perc_add" level="1" value=".15" tags="allHarvest"/>
+				<passive_effect name="HarvestCount" operation="perc_add" level="1" value=".15" tags="allToolsHarvest"/>
+				<passive_effect name="HarvestCount" operation="perc_add" level="1" value=".15" tags="oreWoodHarvest"/>			
+				<passive_effect name="HarvestCount" operation="perc_add" level="1" value=".15" tags="butcherHarvest"/>			
+				<passive_effect name="HarvestCount" operation="perc_add" level="1" value=".15" tags="salvageHarvest"/>			
+				<passive_effect name="HarvestCount" operation="perc_add" level="1" value=".15" tags="cropHarvest,wildCropsHarvest"/>			
+				<passive_effect name="HarvestCount" operation="perc_add" level="1" value=".15" tags="bonusCropHarvest"/>			
+				<passive_effect name="PlayerExpGain" operation="perc_add" level="1" value="-.15" tags="Harvesting"/>
+		</effect_group>	
+	</book>
+	<book name="perkToolTimeDamageIncrease" parent="skillToolTime" max_level="1" base_skill_point_cost="0" name_key="perkToolTimeDamageIncrease" desc_key="perkToolTimeDamageIncreaseDesc" long_desc_key="perkToolTimeDamageIncreaseLongDesc">
+		<effect_group>
+			<!-- <requirement name="!EntityTagCompare" target="other" tags="player"/> -->
+			<requirement name="HoldingItemHasTags" tags="perkToolTime"/>
+			<requirement name="ProgressionLevel" progression_name="perkToolTimeDamageIncrease" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="buffToolTimeDamageIncrease" target="other"/>
+				<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="buffToolTimeDamageIncrease" target="other"/>
+		</effect_group>
+		<effect_group>
+			<requirement name="HoldingItemHasTags" tags="perkToolTime"/>
+			<requirement name="ProgressionLevel" progression_name="perkToolTimeDamageIncrease" operation="Equals" value="1"/>
+				<passive_effect name="BlockDamage" operation="perc_add" level="1" value=".02" tags="perkToolTime"/>
+				<passive_effect name="EntityDamage" operation="perc_add" level="1" value=".1," tags="perkToolTime"/>			
+				<passive_effect name="EntityDamage" operation="base_add" level="1" value="2," tags="perkToolTime"/>			
+				
+				<passive_effect name="AttacksPerMinute" operation="perc_add" level="1" value=".02" tags="perkToolTime"/>
+
+				<passive_effect name="StaminaLoss" operation="perc_add" level="1" value="-.1"/>
+				<passive_effect name="StaminaLoss" operation="perc_add" level="1" value="-.05" tags="secondary"/>
+				<passive_effect name="HarvestCount" operation="perc_add" level="1" value=".05" tags="allHarvest"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" level="1" value="-.15" tags="Harvesting"/>
+		</effect_group>
+		<effect_group>
+			<requirement name="HoldingItemHasTags" tags="perkSkullCrusher"/>
+			<requirement name="ProgressionLevel" progression_name="perkToolTimeDoubleStep" operation="Equals" value="1"/>		
+				<passive_effect name="HarvestCount" operation="perc_add" level="1" value=".15" tags="allHarvest"/>
+				<passive_effect name="HarvestCount" operation="perc_add" level="1" value=".15" tags="allToolsHarvest"/>
+				<passive_effect name="HarvestCount" operation="perc_add" level="1" value=".15" tags="oreWoodHarvest"/>			
+				<passive_effect name="HarvestCount" operation="perc_add" level="1" value=".15" tags="butcherHarvest"/>			
+				<passive_effect name="HarvestCount" operation="perc_add" level="1" value=".15" tags="salvageHarvest"/>			
+				<passive_effect name="HarvestCount" operation="perc_add" level="1" value=".15" tags="cropHarvest,wildCropsHarvest"/>			
+				<passive_effect name="HarvestCount" operation="perc_add" level="1" value=".15" tags="bonusCropHarvest"/>			
+				<passive_effect name="PlayerExpGain" operation="perc_add" level="1" value="-.15" tags="Harvesting"/>
+		</effect_group>	
+
+	</book>
+	<book name="perkToolTimeKnockoutSwing" parent="skillToolTime" max_level="1" base_skill_point_cost="0" name_key="perkToolTimeKnockoutSwing" desc_key="perkToolTimeKnockoutSwingDesc" long_desc_key="perkToolTimeKnockoutSwingLongDesc">
+		<effect_group>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="63"/>
+			<requirement name="!EntityTagCompare" target="other" tags="player"/>
+			<requirement name="HoldingItemHasTags" tags="perkToolTime"/>
+			<requirement name="ProgressionLevel" progression_name="perkToolTimeKnockoutSwing" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" buff="buffStayDownKO" target="other"/>
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" buff="buffStayDownKO" target="other"/>
+		</effect_group>
+		<effect_group>
+			<requirement name="HoldingItemHasTags" tags="perkToolTime"/>
+			<requirement name="ProgressionLevel" progression_name="perkToolTimeDamageIncrease" operation="Equals" value="1"/>
+				<passive_effect name="BlockDamage" operation="perc_add" level="1" value=".02" tags="perkToolTime"/>
+				<passive_effect name="EntityDamage" operation="perc_add" level="1" value=".1," tags="perkToolTime"/>			
+				<passive_effect name="EntityDamage" operation="base_add" level="1" value="2," tags="perkToolTime"/>			
+				
+				<passive_effect name="AttacksPerMinute" operation="perc_add" level="1" value=".02" tags="perkToolTime"/>
+
+				<passive_effect name="StaminaLoss" operation="perc_add" level="1" value="-.1"/>
+				<passive_effect name="StaminaLoss" operation="perc_add" level="1" value="-.05" tags="secondary"/>
+				<passive_effect name="HarvestCount" operation="perc_add" level="1" value=".05" tags="allHarvest"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" level="1" value="-.15" tags="Harvesting"/>
+		</effect_group>
+		<effect_group>
+			<requirement name="HoldingItemHasTags" tags="perkSkullCrusher"/>
+			<requirement name="ProgressionLevel" progression_name="perkToolTimeDoubleStep" operation="Equals" value="1"/>		
+				<passive_effect name="HarvestCount" operation="perc_add" level="1" value=".15" tags="allHarvest"/>
+				<passive_effect name="HarvestCount" operation="perc_add" level="1" value=".15" tags="allToolsHarvest"/>
+				<passive_effect name="HarvestCount" operation="perc_add" level="1" value=".15" tags="oreWoodHarvest"/>			
+				<passive_effect name="HarvestCount" operation="perc_add" level="1" value=".15" tags="butcherHarvest"/>			
+				<passive_effect name="HarvestCount" operation="perc_add" level="1" value=".15" tags="salvageHarvest"/>			
+				<passive_effect name="HarvestCount" operation="perc_add" level="1" value=".15" tags="cropHarvest,wildCropsHarvest"/>			
+				<passive_effect name="HarvestCount" operation="perc_add" level="1" value=".15" tags="bonusCropHarvest"/>			
+				<passive_effect name="PlayerExpGain" operation="perc_add" level="1" value="-.15" tags="Harvesting"/>
+		</effect_group>	
+
+	</book>
+	<book name="perkToolTimeRecharge" parent="skillToolTime" max_level="1" base_skill_point_cost="0" name_key="perkToolTimeRecharge" desc_key="perkToolTimeRechargeDesc" long_desc_key="perkToolTimeRechargeLongDesc">
+		<effect_group>
+			<!-- <requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="1"/> -->
+			<!-- <requirement name="!EntityTagCompare" target="other" tags="player"/> -->
+			<requirement name="HoldingItemHasTags" tags="perkToolTime"/>
+			<requirement name="ProgressionLevel" progression_name="perkToolTimeRecharge" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="AddBuff" buff="buffToolTimeRecharge" target="self"/>
+				<!-- <triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="buffToolTimeRecharge" target="self"/> -->
+				<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="buffToolTimeRecharge" target="self"/>
+		</effect_group>
+		<effect_group>
+			<requirement name="HoldingItemHasTags" tags="perkToolTime"/>
+			<requirement name="ProgressionLevel" progression_name="perkToolTimeDamageIncrease" operation="Equals" value="1"/>
+				<passive_effect name="BlockDamage" operation="perc_add" level="1" value=".02" tags="perkToolTime"/>
+				<passive_effect name="EntityDamage" operation="perc_add" level="1" value=".1," tags="perkToolTime"/>			
+				<passive_effect name="EntityDamage" operation="base_add" level="1" value="2," tags="perkToolTime"/>			
+				
+				<passive_effect name="AttacksPerMinute" operation="perc_add" level="1" value=".02" tags="perkToolTime"/>
+
+				<passive_effect name="StaminaLoss" operation="perc_add" level="1" value="-.1"/>
+				<passive_effect name="StaminaLoss" operation="perc_add" level="1" value="-.05" tags="secondary"/>
+				<passive_effect name="HarvestCount" operation="perc_add" level="1" value=".05" tags="allHarvest"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" level="1" value="-.15" tags="Harvesting"/>
+		</effect_group>
+		<effect_group>
+			<requirement name="HoldingItemHasTags" tags="perkSkullCrusher"/>
+			<requirement name="ProgressionLevel" progression_name="perkToolTimeDoubleStep" operation="Equals" value="1"/>		
+				<passive_effect name="HarvestCount" operation="perc_add" level="1" value=".15" tags="allHarvest"/>
+				<passive_effect name="HarvestCount" operation="perc_add" level="1" value=".15" tags="allToolsHarvest"/>
+				<passive_effect name="HarvestCount" operation="perc_add" level="1" value=".15" tags="oreWoodHarvest"/>			
+				<passive_effect name="HarvestCount" operation="perc_add" level="1" value=".15" tags="butcherHarvest"/>			
+				<passive_effect name="HarvestCount" operation="perc_add" level="1" value=".15" tags="salvageHarvest"/>			
+				<passive_effect name="HarvestCount" operation="perc_add" level="1" value=".15" tags="cropHarvest,wildCropsHarvest"/>			
+				<passive_effect name="HarvestCount" operation="perc_add" level="1" value=".15" tags="bonusCropHarvest"/>			
+				<passive_effect name="PlayerExpGain" operation="perc_add" level="1" value="-.15" tags="Harvesting"/>
+		</effect_group>	
+
+	</book>
+	<book name="perkToolTimeRange" parent="skillToolTime" max_level="1" base_skill_point_cost="0" name_key="perkToolTimeRange" desc_key="perkToolTimeRangeDesc" long_desc_key="perkToolTimeRangeLongDesc">
+		<effect_group>
+			<requirement name="HoldingItemHasTags" tags="perkToolTime"/>
+			<requirement name="ProgressionLevel" progression_name="perkToolTimeRange" operation="Equals" value="1"/>
+				<passive_effect name="MaxRange" operation="base_add" level="1" value="2" tags="perkToolTime"/>
+		</effect_group>
+		<effect_group>
+			<requirement name="HoldingItemHasTags" tags="perkToolTime"/>
+			<requirement name="ProgressionLevel" progression_name="perkToolTimeDamageIncrease" operation="Equals" value="1"/>
+				<passive_effect name="BlockDamage" operation="perc_add" level="1" value=".02" tags="perkToolTime"/>
+				<passive_effect name="EntityDamage" operation="perc_add" level="1" value=".1," tags="perkToolTime"/>			
+				<passive_effect name="EntityDamage" operation="base_add" level="1" value="2," tags="perkToolTime"/>	
+				
+				<passive_effect name="AttacksPerMinute" operation="perc_add" level="1" value=".02" tags="perkToolTime"/>
+
+				<passive_effect name="StaminaLoss" operation="perc_add" value="-.1"/>
+				<passive_effect name="StaminaLoss" operation="perc_add" level="1" value="-.05" tags="secondary"/>
+				<passive_effect name="HarvestCount" operation="perc_add" level="1" value=".05" tags="allHarvest"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" level="1" value="-.15" tags="Harvesting"/>
+		</effect_group>
+		<effect_group>
+			<requirement name="HoldingItemHasTags" tags="perkSkullCrusher"/>
+			<requirement name="ProgressionLevel" progression_name="perkToolTimeDoubleStep" operation="Equals" value="1"/>		
+				<passive_effect name="HarvestCount" operation="perc_add" level="1" value=".15" tags="allHarvest"/>
+				<passive_effect name="HarvestCount" operation="perc_add" level="1" value=".15" tags="allToolsHarvest"/>
+				<passive_effect name="HarvestCount" operation="perc_add" level="1" value=".15" tags="oreWoodHarvest"/>			
+				<passive_effect name="HarvestCount" operation="perc_add" level="1" value=".15" tags="butcherHarvest"/>			
+				<passive_effect name="HarvestCount" operation="perc_add" level="1" value=".15" tags="salvageHarvest"/>			
+				<passive_effect name="HarvestCount" operation="perc_add" level="1" value=".15" tags="cropHarvest,wildCropsHarvest"/>			
+				<passive_effect name="HarvestCount" operation="perc_add" level="1" value=".15" tags="bonusCropHarvest"/>			
+				<passive_effect name="PlayerExpGain" operation="perc_add" level="1" value="-.15" tags="Harvesting"/>
+		</effect_group>	
+
+		<effect_group>
+			<passive_effect name="JunkTurretActiveCount" operation="base_add" level="1" value="1"/>
+				<!-- JunkTurretActiveCount,  default=1,  A value of 0 means that 1 turret can be active. Value of 2 means 3 turrets will be active. -->
+			<passive_effect name="JunkTurretActiveRange" operation="base_set" level="1" value="10"/>
+		</effect_group>
+
+	</book>
+	
+	
+	<book name="perkToolTimeT3PoweredSledge" parent="skillToolTime" max_level="1" base_skill_point_cost="0" name_key="perkToolTimeT3PoweredSledge" desc_key="perkToolTimeT3PoweredSledgeDesc" long_desc_key="perkToolTimeT3PoweredSledgeLongDesc">
+		<effect_group>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="meleeWpnSledgeT3PoweredSledgehammer"/>
+			
+
+			<!-- Increase the chance to find sledgehammers with each perk rank -->
+			<passive_effect name="LootProb" operation="perc_add" level="1" value="2" tags="sledgeSkill"/>
+
+			<!-- Increase the chance to find sledgehammer crafting skill magazines with each perk rank up to crafting skill 75 -->
+			<passive_effect name="LootProb" operation="perc_add" level="1" value="2" tags="sledgehammersCSM">
+				<requirement name="ProgressionLevel" progression_name="craftingSledgehammers" operation="LT" value="75"/>
+			</passive_effect>
+
+			<!-- Once sledgehammer crafting skill reaches 75, set the probability bonus of finding sledgehammer crafting skill magazines to 0 -->
+			<passive_effect name="LootProb" operation="base_set" level="1" value="1" tags="sledgehammersCSM">
+				<requirement name="ProgressionLevel" progression_name="craftingSledgehammers" operation="Equals" value="75"/>
+			</passive_effect>
+
+			<!-- Increase the chance to find electrical items with each perk rank -->
+			<passive_effect name="LootProb" operation="perc_add" level="1" value="2" tags="electricianSkill"/>
+			<!-- Increase the chance to find trap items with each perk rank -->
+			<passive_effect name="LootProb" operation="perc_add" level="1" value="2" tags="trapsSkill"/>
+			<!-- Increase the chance to find workstations with each perk rank -->
+			<passive_effect name="LootProb" operation="perc_add" level="1" value="2" tags="workstationSkill"/>
+			<!-- Increase the chance to find repair tools with each perk rank -->
+			<passive_effect name="LootProb" operation="perc_add" level="1" value="2" tags="repairingSkill"/>
+
+			<!-- Increase the chance to find electrical crafting skill magazines with each perk rank up to crafting skill 100 -->
+			<passive_effect name="LootProb" operation="perc_add" level="1" value="2" tags="electricianCSM">
+				<requirement name="ProgressionLevel" progression_name="craftingElectrician" operation="LT" value="100"/>
+			</passive_effect>
+			<!-- Increase the chance to find trap crafting skill magazines with each perk rank up to crafting skill 75 -->
+			<passive_effect name="LootProb" operation="perc_add" level="1" value="2" tags="trapsCSM">
+				<requirement name="ProgressionLevel" progression_name="craftingTraps" operation="LT" value="75"/>
+			</passive_effect>
+			<!-- Increase the chance to find workstation crafting skill magazines with each perk rank up to crafting skill 75 -->
+			<passive_effect name="LootProb" operation="perc_add" level="1" value="2" tags="workstationCSM">
+				<requirement name="ProgressionLevel" progression_name="craftingWorkstations" operation="LT" value="75"/>
+			</passive_effect>
+			<!-- Increase the chance to find repair tool crafting skill magazines with each perk rank up to crafting skill 50 -->
+			<passive_effect name="LootProb" operation="perc_add" level="1" value="2" tags="repairToolsCSM">
+				<requirement name="ProgressionLevel" progression_name="craftingRepairTools" operation="LT" value="50"/>
+			</passive_effect>
+
+			<!-- Once electrical crafting skill reaches 100, set the probability bonus of finding electrical crafting skill magazines to 0 -->
+			<passive_effect name="LootProb" operation="base_set" level="1" value="1" tags="electricianCSM">
+				<requirement name="ProgressionLevel" progression_name="craftingElectrician" operation="Equals" value="100"/>
+			</passive_effect>
+			<!-- Once trap crafting skill reaches 75, set the probability bonus of finding trap crafting skill magazines to 0 -->
+			<passive_effect name="LootProb" operation="base_set" level="1" value="1" tags="trapsCSM">
+				<requirement name="ProgressionLevel" progression_name="craftingTraps" operation="Equals" value="75"/>
+			</passive_effect>
+			<!-- Once workstation crafting skill reaches 75, set the probability bonus of finding workstation crafting skill magazines to 0 -->
+			<passive_effect name="LootProb" operation="base_set" level="1" value="1" tags="workstationCSM">
+				<requirement name="ProgressionLevel" progression_name="craftingWorkstations" operation="Equals" value="75"/>
+			</passive_effect>
+			<!-- Once repair tool skill reaches 50, set the probability bonus of finding repair tool crafting skill magazines to 0 -->
+			<passive_effect name="LootProb" operation="base_set" level="1" value="1" tags="repairToolsCSM">
+				<requirement name="ProgressionLevel" progression_name="craftingRepairTools" operation="Equals" value="50"/>
+			</passive_effect>
+
+		</effect_group>
+		<effect_group>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="63"/>
+			<requirement name="!EntityTagCompare" target="other" tags="player"/>
+			<requirement name="HoldingItemHasTags" tags="perkToolTime"/>
+			<requirement name="ProgressionLevel" progression_name="perkToolTimeT3PoweredSledge" operation="Equals" value="1"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" level="1" value=".05" tags="Kill"/>
+		</effect_group>
+	</book>
+	
+	
+	<book name="perkToolTimeShocker" parent="skillToolTime" max_level="1" base_skill_point_cost="0" name_key="perkToolTimeShocker" desc_key="perkToolTimeShockerDesc" long_desc_key="perkToolTimeShockerLongDesc">
+		<effect_group>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="modMeleeSledgeShocker"/>
+			
+			<!-- Increase the chance to find batons and turrets with each perk rank -->
+			<passive_effect name="LootProb" operation="perc_add" value="2" tags="roboticsSkill"/>
+
+			<!-- Increase the chance to find robotic crafting skill magazines with each perk rank up to crafting skill 100 -->
+			<passive_effect name="LootProb" operation="perc_add" value="2" tags="roboticsCSM">
+				<requirement name="ProgressionLevel" progression_name="craftingRobotics" operation="LT" value="100"/>
+			</passive_effect>
+
+			<!-- Once robotic crafting skill reaches 100, set the probability bonus of finding robotic crafting skill magazines to 0 -->
+			<passive_effect name="LootProb" operation="base_set" value="1" tags="roboticsCSM">
+				<requirement name="ProgressionLevel" progression_name="craftingRobotics" operation="Equals" value="100"/>
+			</passive_effect>
+
+			<!-- Increase the chance to find Tech Junkie books until each book is read -->
+			<passive_effect name="LootProb" operation="perc_add" value="2" tags="techJunkieProb">
+				<requirement name="ProgressionLevel" progression_name="perkTechJunkie8Complete" operation="LT" value="1"/>
+			</passive_effect>
+
+			<!-- When all Tech Junkie books have been read, set the probability bonus of finding them to 0 -->
+			<passive_effect name="LootProb" operation="perc_add" value="1" tags="techJunkieProb">
+				<requirement name="ProgressionLevel" progression_name="perkTechJunkie8Complete" operation="Equals" value="1"/>
+			</passive_effect>
+
+			<!-- Increase the chance to find sledgehammers with each perk rank -->
+			<passive_effect name="LootProb" operation="perc_add" level="1" value="2" tags="sledgeSkill"/>
+
+			<!-- Increase the chance to find sledgehammer crafting skill magazines with each perk rank up to crafting skill 75 -->
+			<passive_effect name="LootProb" operation="perc_add" level="1" value="2" tags="sledgehammersCSM">
+				<requirement name="ProgressionLevel" progression_name="craftingSledgehammers" operation="LT" value="75"/>
+			</passive_effect>
+
+			<!-- Once sledgehammer crafting skill reaches 75, set the probability bonus of finding sledgehammer crafting skill magazines to 0 -->
+			<passive_effect name="LootProb" operation="base_set" level="1" value="1" tags="sledgehammersCSM">
+				<requirement name="ProgressionLevel" progression_name="craftingSledgehammers" operation="Equals" value="75"/>
+			</passive_effect>
+
+			<!-- Increase the chance to find electrical items with each perk rank -->
+			<passive_effect name="LootProb" operation="perc_add" level="1" value="2" tags="electricianSkill"/>
+			<!-- Increase the chance to find trap items with each perk rank -->
+			<passive_effect name="LootProb" operation="perc_add" level="1" value="2" tags="trapsSkill"/>
+			<!-- Increase the chance to find workstations with each perk rank -->
+			<passive_effect name="LootProb" operation="perc_add" level="1" value="2" tags="workstationSkill"/>
+			<!-- Increase the chance to find repair tools with each perk rank -->
+			<passive_effect name="LootProb" operation="perc_add" level="1" value="2" tags="repairingSkill"/>
+
+			<!-- Increase the chance to find electrical crafting skill magazines with each perk rank up to crafting skill 100 -->
+			<passive_effect name="LootProb" operation="perc_add" level="1" value="2" tags="electricianCSM">
+				<requirement name="ProgressionLevel" progression_name="craftingElectrician" operation="LT" value="100"/>
+			</passive_effect>
+			<!-- Increase the chance to find trap crafting skill magazines with each perk rank up to crafting skill 75 -->
+			<passive_effect name="LootProb" operation="perc_add" level="1" value="2" tags="trapsCSM">
+				<requirement name="ProgressionLevel" progression_name="craftingTraps" operation="LT" value="75"/>
+			</passive_effect>
+			<!-- Increase the chance to find workstation crafting skill magazines with each perk rank up to crafting skill 75 -->
+			<passive_effect name="LootProb" operation="perc_add" level="1" value="2" tags="workstationCSM">
+				<requirement name="ProgressionLevel" progression_name="craftingWorkstations" operation="LT" value="75"/>
+			</passive_effect>
+			<!-- Increase the chance to find repair tool crafting skill magazines with each perk rank up to crafting skill 50 -->
+			<passive_effect name="LootProb" operation="perc_add" level="1" value="2" tags="repairToolsCSM">
+				<requirement name="ProgressionLevel" progression_name="craftingRepairTools" operation="LT" value="50"/>
+			</passive_effect>
+
+			<!-- Once electrical crafting skill reaches 100, set the probability bonus of finding electrical crafting skill magazines to 0 -->
+			<passive_effect name="LootProb" operation="base_set" level="1" value="1" tags="electricianCSM">
+				<requirement name="ProgressionLevel" progression_name="craftingElectrician" operation="Equals" value="100"/>
+			</passive_effect>
+			<!-- Once trap crafting skill reaches 75, set the probability bonus of finding trap crafting skill magazines to 0 -->
+			<passive_effect name="LootProb" operation="base_set" level="1" value="1" tags="trapsCSM">
+				<requirement name="ProgressionLevel" progression_name="craftingTraps" operation="Equals" value="75"/>
+			</passive_effect>
+			<!-- Once workstation crafting skill reaches 75, set the probability bonus of finding workstation crafting skill magazines to 0 -->
+			<passive_effect name="LootProb" operation="base_set" level="1" value="1" tags="workstationCSM">
+				<requirement name="ProgressionLevel" progression_name="craftingWorkstations" operation="Equals" value="75"/>
+			</passive_effect>
+			<!-- Once repair tool skill reaches 50, set the probability bonus of finding repair tool crafting skill magazines to 0 -->
+			<passive_effect name="LootProb" operation="base_set" level="1" value="1" tags="repairToolsCSM">
+				<requirement name="ProgressionLevel" progression_name="craftingRepairTools" operation="Equals" value="50"/>
+			</passive_effect>
+		</effect_group>
+		<effect_group>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="63"/>
+			<requirement name="!EntityTagCompare" target="other" tags="player"/>
+			<requirement name="HoldingItemHasTags" tags="perkToolTime"/>
+			<requirement name="ProgressionLevel" progression_name="perkToolTimeShocker" operation="Equals" value="1"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" level="1" value=".05" tags="Kill"/>
+		</effect_group>
+	</book>
+	
+	
+	<book name="perkToolTimeComplete" parent="skillToolTime" max_level="1" base_skill_point_cost="0" name_key="perkToolTimeComplete" desc_key="perkToolTimeCompleteDesc" long_desc_key="perkToolTimeCompleteLongDesc">
+		<effect_group>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="63"/>
+			<requirement name="!EntityTagCompare" target="other" tags="player"/>
+			<requirement name="HoldingItemHasTags" tags="perkToolTime"/>
+			<requirement name="ProgressionLevel" progression_name="perkToolTimeComplete" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" buff="buffToolTimeHurtEm" target="other"/>
+				
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" buff="buffToolTimeHurtEm" target="other"/>
+		</effect_group>
+		<effect_group>
+			<requirement name="!EntityTagCompare" target="other" tags="player"/>
+			<requirement name="HoldingItemHasTags" tags="perkToolTime"/>
+			<requirement name="ProgressionLevel" progression_name="perkToolTimeComplete" operation="Equals" value="1"/>
+				<passive_effect name="PlayerExpGain" operation="perc_add" level="1" value=".15" tags="Kill"/>
+		</effect_group>
+
+		<!-- <effect_group>
+			<requirement name="ItemHasTags" tags="perkToolTime"/>
+				<triggered_effect trigger="onSelfPrimaryActionStart" level="0" action="AddBuff" buff="buffToolTimeSledgeHarvest">
+					<requirement name="PerksUnlocked" skill_name="skillToolTime" operation="GTE" value="1"/>
+					<requirement name="PerksUnlocked" skill_name="skillToolTime" operation="LT" value="7"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionStart" level="0" action="AddBuff" buff="buffToolTimeSledgeHarvest">
+					<requirement name="PerksUnlocked" skill_name="skillToolTime" operation="GTE" value="1"/>
+					<requirement name="PerksUnlocked" skill_name="skillToolTime" operation="LT" value="7"/>
+				</triggered_effect>
+		</effect_group> -->
+
+		<effect_group>
+			<requirement name="ItemHasTags" tags="perkToolTime"/>
+			<requirement name="ProgressionLevel" progression_name="perkToolTimeComplete" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" level="1" action="AddBuff" buff="buffToolTimeSledgeHarvestX2"/>
+				<!-- <triggered_effect trigger="onSelfSecondaryActionStart" level="1" action="AddBuff" buff="buffToolTimeSledgeHarvestX2"/> -->
+		</effect_group>
+
+		<effect_group>
+			<passive_effect name="JunkTurretActiveCount" operation="base_add" level="1" value="1"/>
+				<!-- JunkTurretActiveCount,  default=1,  A value of 0 means that 1 turret can be active. Value of 2 means 3 turrets will be active. -->
+			<passive_effect name="JunkTurretActiveRange" operation="base_set" level="1" value="10"/>
+		</effect_group>
+
+		
+	</book>
+	
+	
+</append>
+
+
+
+
+</configs>

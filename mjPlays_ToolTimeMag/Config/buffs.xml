@@ -1,0 +1,209 @@
+<configs>
+<append xpath="/buffs">
+<!-- Tool Time Buffs -->
+	<buff name="buffToolTimeDamageIncrease" name_key="buffToolTimeDamageIncreasePlayerName"  description_key="buffToolTimeDamageIncreasePlayerDesc" icon="ui_game_symbol_electric_power" icon_color="43,135,235" >
+		<stack_type value="replace"/>
+		<duration value="1"/>
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffToolTimeDamageIncreasePlayer" target="selfAOE" target_tags="player" range="20"/>
+		</effect_group>
+	</buff>
+	<buff name="buffToolTimeDamageIncreasePlayer" name_key="buffToolTimeDamageIncreasePlayerName"  description_key="buffToolTimeDamageIncreasePlayerDesc" icon="ui_game_symbol_electric_power" icon_color="43,135,235" >
+		<stack_type value="replace"/>
+		<duration value="2"/>
+		<effect_group>
+			<passive_effect name="EntityDamage" operation="perc_add" value=".3" tags="weapon"/>
+			<passive_effect name="EntityDamage" operation="perc_add" value="1.3" tags="tool"/>
+		</effect_group>
+		<effect_group>
+			<requirement name="PerksUnlocked" skill_name="skillToolTime" operation="GTE" value="2"/>
+			<requirement name="PerksUnlocked" skill_name="skillToolTime" operation="LT" value="7"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".75" tags="weapon"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="1.7" tags="tool"/>
+		</effect_group>
+		<effect_group>
+			<requirement name="PerksUnlocked" skill_name="skillToolTime" operation="GTE" value="3"/>
+			<requirement name="PerksUnlocked" skill_name="skillToolTime" operation="LT" value="7"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="1.3" tags="weapon"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="2.3" tags="tool"/>
+		</effect_group>
+		<effect_group>
+			<requirement name="PerksUnlocked" skill_name="skillToolTime" operation="GTE" value="4"/>
+			<requirement name="PerksUnlocked" skill_name="skillToolTime" operation="LT" value="7"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="1.7" tags="weapon"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="3" tags="tool"/>
+		</effect_group>
+		<effect_group>
+			<requirement name="PerksUnlocked" skill_name="skillToolTime" operation="GTE" value="5"/>
+			<requirement name="PerksUnlocked" skill_name="skillToolTime" operation="LT" value="7"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="2.3" tags="weapon"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="3.5" tags="tool"/>
+		</effect_group>
+		<effect_group>
+			<requirement name="PerksUnlocked" skill_name="skillToolTime" operation="GTE" value="6"/>
+			<requirement name="PerksUnlocked" skill_name="skillToolTime" operation="LT" value="7"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="2.8" tags="weapon"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="4.2" tags="tool"/>
+		</effect_group>
+		<effect_group>
+			<requirement name="PerksUnlocked" skill_name="skillToolTime" operation="GTE" value="7"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="3.3" tags="weapon"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value="4.9" tags="tool"/>
+		</effect_group>
+	</buff>
+	<buff name="buffToolTimeRecharge" hidden="true">
+		<stack_type value="replace"/>
+		<duration value=".75"/>
+		<update_rate value=".4"/>
+		<effect_group>
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="LT" value="40"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="20"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar=".stunBatonCharge" target="self" operation="add" value="5"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".stunBatonCharge" target="self" operation="add" value="5"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".stunBatonCharge" target="self" operation="add" value="5"/>
+		</effect_group>
+
+		<effect_group>
+			<!-- <triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="add" value="1"/>		 -->
+			<!-- <triggered_effect trigger="onSelfBuffStack" action="ModifyStats" stat="Stamina" operation="add" value="1"/>		 -->
+			<triggered_effect trigger="onSelfBuffFinish" action="ModifyStats" stat="Stamina" operation="add" value="1"/>		
+		
+			<passive_effect name="StaminaChangeOT" operation="perc_add" value=".025"> 
+				<requirement name="!HasBuff" buff="buffHealWaterMax"/>
+			</passive_effect>
+
+			<passive_effect name="StaminaChangeOT" operation="perc_add" value=".01"> 
+				<requirement name="HasBuff" buff="buffHealWaterMax"/>
+			</passive_effect>
+		</effect_group>
+	</buff>
+	<buff name="buffToolTimeHurtEm" name_key="buffArmSprainedFallTrigger" icon="ui_game_symbol_critical" icon_color="255,0,0" hidden="true">
+		<stack_type value="replace"/>
+		<duration value="1"/>
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="twitch_buffWeakenMelee" target="self" />
+			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="twitch_buffNoRunning" target="self" />
+		</effect_group>
+	</buff>
+	<buff name="buffToolTimeAutoRecharger" hidden="true">
+		<stack_type value="ignore"/>
+		<update_rate value="1"/>
+		<duration value="0"/>
+		<effect_group>
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="LT" value="40"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".stunBatonCharge" target="self" operation="add" value="1"/>
+		</effect_group>
+
+		
+	</buff>
+<!-- tests -->
+
+	<buff name="buffToolTimeSledgeHarvest" name_key="buffArmSprainedFallTrigger" icon="ui_game_symbol_critical" icon_color="255,0,0">
+		<stack_type value="replace"/>
+		<duration value="2"/>
+
+	<effect_group name="Tool Time Tiered FX01">
+		<requirement name="HoldingItemHasTags" tags="perkSkullCrusher"/>
+			<passive_effect name="EntityDamage" operation="perc_add" value=".5" tags="perkSkullCrusher,perkElectrocutioner,perkDeepCuts,perkToolTime"/> 
+			<passive_effect name="BlockDamage" operation="perc_add" value=".15" tags="perkSkullCrusher,perkElectrocutioner,perkDeepCuts,perkToolTime"/> 
+			
+			<passive_effect name="DamageModifier" operation="perc_add" value="1"/>
+			<!-- <passive_effect name="DamageModifier" operation="perc_add" value="1" tags="stone"/>
+			<passive_effect name="DamageModifier" operation="perc_add" value="1" tags="metal"/>
+			<passive_effect name="DamageModifier" operation="perc_add" value="1" tags="wood"/>
+			<passive_effect name="DamageModifier" operation="perc_add" value="1" tags="cloth,head"/>
+
+			<passive_effect name="HarvestCount" operation="perc_add" value="1" tags="butcherHarvest"/>
+			<passive_effect name="HarvestCount" operation="perc_add" value="1" tags="allHarvest"/>
+			<passive_effect name="HarvestCount" operation="perc_add" value="1" tags="allToolsHarvest"/>
+			<passive_effect name="HarvestCount" operation="perc_add" value="1" tags="oreWoodHarvest"/>	
+			<passive_effect name="HarvestCount" operation="perc_add" value="1" tags="salvageHarvest"/> -->	
+			
+			<!-- <passive_effect name="HarvestCount" operation="base_add" value="1"/>	 -->
+			<!-- <passive_effect name="HarvestCount" operation="perc_add" value="1"/>	 -->
+	</effect_group>
+	
+	<effect_group>
+		<requirement name="PerksUnlocked" skill_name="skillToolTime" operation="GTE" value="1"/>
+			<!-- <passive_effect name="HarvestCount" operation="base_add" value="1"/>	 -->
+			<passive_effect name="HarvestCount" operation="perc_add" value=".15"/>
+			<passive_effect name="ScrappingTime" operation="perc_add" value="-.05"/>
+			<passive_effect name="CraftingTime" operation="perc_add" value="-.025"/>
+	</effect_group>
+	
+	<effect_group>
+		<requirement name="PerksUnlocked" skill_name="skillToolTime" operation="Equals" value="2"/>
+			<!-- <passive_effect name="HarvestCount" operation="base_add" value="1"/>	 -->
+			<passive_effect name="HarvestCount" operation="perc_add" value=".3"/>
+			<passive_effect name="ScrappingTime" operation="perc_add" value="-.1"/>
+			<passive_effect name="CraftingTime" operation="perc_add" value="-.05"/>
+	</effect_group>
+	<effect_group>
+		<requirement name="PerksUnlocked" skill_name="skillToolTime" operation="Equals" value="3"/>
+			<!-- <passive_effect name="HarvestCount" operation="base_add" value="1"/>	 -->
+			<passive_effect name="HarvestCount" operation="perc_add" value=".45"/>
+			<passive_effect name="ScrappingTime" operation="perc_add" value="-.15"/>
+			<passive_effect name="CraftingTime" operation="perc_add" value="-.075"/>
+	</effect_group>
+	<effect_group>
+		<requirement name="PerksUnlocked" skill_name="skillToolTime" operation="Equals" value="4"/>
+			<!-- <passive_effect name="HarvestCount" operation="base_add" value="1"/>	 -->
+			<passive_effect name="HarvestCount" operation="perc_add" value=".6"/>
+			<passive_effect name="ScrappingTime" operation="perc_add" value="-.2"/>
+			<passive_effect name="CraftingTime" operation="perc_add" value="-.1"/>
+	</effect_group>
+	<effect_group>
+		<requirement name="PerksUnlocked" skill_name="skillToolTime" operation="Equals" value="5"/>
+			<!-- <passive_effect name="HarvestCount" operation="base_add" value="1"/>	 -->
+			<passive_effect name="HarvestCount" operation="perc_add" value=".75"/>
+			<passive_effect name="ScrappingTime" operation="perc_add" value="-.25"/>
+			<passive_effect name="CraftingTime" operation="perc_add" value="-.125"/>
+	</effect_group>
+	<effect_group>
+		<requirement name="PerksUnlocked" skill_name="skillToolTime" operation="Equals" value="6"/>
+			<!-- <passive_effect name="HarvestCount" operation="base_add" value="1"/>	 -->
+			<passive_effect name="HarvestCount" operation="perc_add" value=".9"/>
+			<passive_effect name="ScrappingTime" operation="perc_add" value="-.3"/>
+			<passive_effect name="CraftingTime" operation="perc_add" value="-.15"/>
+	</effect_group>	
+	
+	</buff>
+
+	<buff name="buffToolTimeSledgeHarvestX2" name_key="buffToolTimeSledgeHarvestX2" icon="ui_game_symbol_critical" icon_color="0,255,0">
+		<stack_type value="replace"/>
+		<duration value="2"/>
+
+	<effect_group name="Tool Time Tiered FX07">
+			<passive_effect name="EntityDamage" operation="perc_add" value="1.5" tags="perkSkullCrusher,perkElectrocutioner,perkDeepCuts,perkToolTime"/> 
+			<passive_effect name="BlockDamage" operation="perc_add" value="2.5" tags="perkSkullCrusher,perkElectrocutioner,perkDeepCuts,perkToolTime"/> 
+			
+			<passive_effect name="DamageModifier" operation="perc_add" value="2"/>
+			<!-- <passive_effect name="DamageModifier" operation="perc_add" value="2" tags="earth"/>
+			<passive_effect name="DamageModifier" operation="perc_add" value="2" tags="stone"/>
+			<passive_effect name="DamageModifier" operation="perc_add" value="2" tags="metal"/>
+			<passive_effect name="DamageModifier" operation="perc_add" value="2" tags="wood"/>
+			<passive_effect name="DamageModifier" operation="perc_add" value="2" tags="cloth,head"/>
+
+			<passive_effect name="HarvestCount" operation="perc_add" value="2" tags="butcherHarvest"/>
+			<passive_effect name="HarvestCount" operation="perc_add" value="2" tags="allHarvest"/>
+			<passive_effect name="HarvestCount" operation="perc_add" value="2" tags="allToolsHarvest"/>
+			<passive_effect name="HarvestCount" operation="perc_add" value="2" tags="oreWoodHarvest"/>	
+			<passive_effect name="HarvestCount" operation="perc_add" value="2" tags="salvageHarvest"/> -->	
+	</effect_group>
+	<effect_group>
+			<!-- <passive_effect name="HarvestCount" operation="base_add" value="2" tags="tool"/>	 -->
+			<!-- <passive_effect name="HarvestCount" operation="perc_add" value="5" tags="tool"/> -->
+			<passive_effect name="HarvestCount" operation="base_add" value="2"/>	
+			<passive_effect name="HarvestCount" operation="perc_add" value="1.3"/>
+			<passive_effect name="ScrappingTime" operation="perc_add" value="-.5"/>
+			<passive_effect name="CraftingTime" operation="perc_add" value="-.2"/>
+	</effect_group>	
+	
+	</buff>
+
+</append>
+
+
+
+</configs>

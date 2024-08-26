@@ -1,0 +1,21 @@
+<configs>
+<append xpath="/traders/trader_item_groups/trader_item_group[@name='perkBooks']">
+	<item name="bookToolTimeDoubleStep"/>
+	<item name="bookToolTimeDamageIncrease"/>
+	<item name="bookToolTimeKnockoutSwing"/>
+	<item name="bookToolTimeRecharge"/>
+	<item name="bookToolTimeRange"/>
+	<item name="bookToolTimeT3PoweredSledge"/>
+	<item name="bookToolTimeShocker"/>
+</append>
+
+<append xpath="/traders/trader_item_groups/trader_item_group[@name='groupMeleeAll']">
+	<item name="meleeWpnSledgeT3PoweredSledgehammer" prob="0.25"/>
+</append>
+
+<append xpath="/traders/trader_item_groups/trader_item_group[@name='groupMeleeMods']">
+	<item name="modMeleeSledgeShocker" prob="0.1"/>
+</append>
+
+
+</configs>

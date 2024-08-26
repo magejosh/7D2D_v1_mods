@@ -160,6 +160,14 @@
 				<!-- Disable gaining Experience from any source. -->
     </set>	
 	
+    <set xpath="/blocks/block[@name='ConfigFeatureBlock']/property[@class='AdvancedPickUpAndPlace']">
+				<property name="Logging" value="true"/>
+				<property name="Legacy" value="false" />
+				<property name="TakeWithTool" value="meleeToolRepairT1ClawHammer" />
+				<property name="WoodenFenceTools" value="meleeToolRepairT0StoneAxe,meleeToolRepairT0TazasStoneAxe,meleeToolRepairT1ClawHammer,meleeToolAxeT1IronFireaxe,meleeToolAxeT2SteelAxe,meleeToolAxeT3Chainsaw"/>
+				<property name="woodMaterial" value="Mwood_weak,Mwood_regular,Mwood_shapes"/>
+    </set>	
+	
     <set xpath="/blocks/block[@name='ConfigFeatureBlock']/property[@class='ErrorHandling']">
 				<property name="Logging" value="false"/>
 				<property name="NoExceptionHijack" value="true" />

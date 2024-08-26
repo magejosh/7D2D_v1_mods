@@ -1,0 +1,46 @@
+<mj>
+<append xpath="/recipes">
+	<recipe name="meleeWpnSledgeT3PoweredSledgehammer" craft_area="workbench" tags="craftingSledgehammers,learnable,workbenchCrafting,perkSkullCrusher">
+		<ingredient name="resourceElectricParts" count="17" />
+		<ingredient name="resourceForgedSteel" count="11" />
+		<ingredient name="meleeWpnSledgeT3SteelSledgehammerParts" count="6" />
+		<ingredient name="carBattery" count="5"/>
+		<ingredient name="resourceLegendaryParts" count="1"/>
+		<effect_group>
+			<passive_effect name="CraftingIngredientCount" level="2,3,4,5,6" operation="base_add" value="5,10,15,20,30" tags="resourceElectricParts,resourceForgedSteel"/>
+			<passive_effect name="CraftingIngredientCount" level="3,4,5,6" operation="base_add" value="2,5,10,15" tags="meleeWpnSledgeT3SteelSledgehammerParts"/>
+			<passive_effect name="CraftingIngredientCount" level="4,5,6" operation="base_add" value="1,2,3" tags="carBattery"/>
+			<passive_effect name="CraftingIngredientCount" level="6" operation="base_add" value="2" tags="resourceLegendaryParts"/>
+			<passive_effect name="CraftingIngredientCount" level="2,6" operation="perc_add" value="1,5" tags="meleeWpnSledgeT3SteelSledgehammerParts,resourceForgedSteel,carBattery,resourceElectricParts,resourceLegendaryParts"/>
+		</effect_group>
+	</recipe>
+
+	<recipe name="modMeleeSledgeShocker" craft_area="workbench" tags="perkSkullCrusher,learnable,workbenchCrafting,perkAdvancedEngineering">
+		<ingredient name="resourceElectricParts" count="150" />
+		<ingredient name="modMeleeClubBurningShaft" count="1" />
+		<ingredient name="modMeleeStunBatonRepulsor" count="1" />
+		<ingredient name="meleeWpnBatonT2StunBatonParts" count="5"/>
+		<ingredient name="resourceLegendaryParts" count="3"/>
+	</recipe>
+
+	<recipe name="bookToolTimeCompleteCollectionA" craft_area="workbench">
+		<ingredient name="bookToolTimeDoubleStep" count="1" />
+		<ingredient name="bookToolTimeDamageIncrease" count="1" />
+		<ingredient name="bookToolTimeKnockoutSwing" count="1" />
+		<ingredient name="bookToolTimeRecharge" count="1" />
+		<ingredient name="bookToolTimeRange" count="1" />
+	</recipe>
+
+	<recipe name="bookToolTimeCompleteCollectionB" craft_area="workbench">
+		<ingredient name="bookToolTimeT3PoweredSledge" count="1" />
+		<ingredient name="bookToolTimeShocker" count="1" />
+	</recipe>
+
+	<recipe name="bookToolTimeCompleteCollection" craft_area="workbench">
+		<ingredient name="bookToolTimeCompleteCollectionA" count="1" />
+		<ingredient name="bookToolTimeCompleteCollectionB" count="1" />
+	</recipe>
+
+</append>
+
+</mj>

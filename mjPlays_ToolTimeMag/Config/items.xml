@@ -1,0 +1,567 @@
+<configs>
+	 <!-- tags must match the tags in the effect_group -->
+	 <append xpath="/items/item[starts-with(@name, 'meleeWpnSledgeT') and not(contains(@name, 'Schematic'))]/property[@name='Tags']/@value">,perkToolTime</append>
+	 <append xpath="/items/item[starts-with(@name, 'meleeWpnBladeT') and not(contains(@name, 'Schematic'))]/property[@name='Tags']/@value">,perkToolTime</append>
+	 <append xpath="/items/item[starts-with(@name, 'meleeWpnBatonT') and not(contains(@name, 'Schematic'))]/property[@name='Tags']/@value">,perkToolTime</append>
+	 <append xpath="/items/item[starts-with(@name, 'meleeToolSalvageT') and not(contains(@name, 'Schematic'))]/property[@name='Tags']/@value">,perkToolTime</append>
+	 <append xpath="/items/item[starts-with(@name, 'meleeToolPickT') and not(contains(@name, 'Schematic'))]/property[@name='Tags']/@value">,perkToolTime</append>
+	 <append xpath="/items/item[starts-with(@name, 'meleeToolAxeT') and not(contains(@name, 'Schematic'))]/property[@name='Tags']/@value">,perkToolTime</append>
+	 <append xpath="/items/item[starts-with(@name, 'meleeToolShovelT') and not(contains(@name, 'Schematic'))]/property[@name='Tags']/@value">,perkToolTime</append>
+	 <append xpath="/items/item[starts-with(@name, 'meleeToolRepairT') and not(contains(@name, 'Schematic'))]/property[@name='Tags']/@value">,perkToolTime</append>
+	 <append xpath="/items/item[starts-with(@name, 'gunBotT') and not(contains(@name, 'Nailgun')) and not(contains(@name, 'Schematic'))]/property[@name='Tags']/@value">,perkToolTime</append>
+	 <append xpath="/items/item[starts-with(@name, 'meleeHandPlayer') and not(contains(@name, 'Nailgun')) and not(contains(@name, 'Schematic'))]/property[@name='Tags']/@value">,perkToolTime</append>
+	 
+	 
+<!-- books -->
+<append xpath="/items">
+<!-- Baton Books -->
+	<item name="bookToolTimeDoubleStep"> 
+		<property name="Extends" value="bookFiremansAlmanacHeat"/>
+		<!-- <property name="CustomIconTint" value="81, 17, 11"/> -->
+		<property name="CustomIcon" value="toolTimeMagMove"/>
+		
+		<property name="DescriptionKey" value="perkToolTimeDoubleStepLongDesc"/>
+		<property name="Unlocks" value="perkToolTimeDoubleStep"/>
+		<property name="Tags" value="repairingSkill"/>
+		<property name="Group" value="Books,BooksOnly,TCReading"/>
+			<property class="Action0">
+				<property name="Create_item" value="bookToolTimeDoubleStep"/>
+			</property>		
+		<effect_group tiered="false">
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkToolTimeDoubleStep" level="-1"/>
+			<!-- <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/> -->
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkToolTimeComplete" level="-1">
+				<requirement name="PerksUnlocked" skill_name="skillToolTime" operation="GTE" value="7"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="PlaySound" sound="read_skillbook_final" play_in_head="true">
+				<requirement name="PerksUnlocked" skill_name="skillToolTime" operation="GTE" value="7"/></triggered_effect>
+		</effect_group>
+	</item>
+	<item name="bookToolTimeDamageIncrease"> 
+		<property name="Extends" value="bookFiremansAlmanacHeat"/>
+		<!-- <property name="CustomIconTint" value="81, 17, 11"/> -->
+		<property name="CustomIcon" value="toolTimeMagPick"/>
+		
+		<property name="DescriptionKey" value="perkToolTimeDamageIncreaseLongDesc"/>
+		<property name="Unlocks" value="perkToolTimeDamageIncrease"/>
+		<property name="Tags" value="repairingSkill"/>
+		<property name="Group" value="Books,BooksOnly,TCReading"/>
+			<property class="Action0">
+				<property name="Create_item" value="bookToolTimeDamageIncrease"/>
+			</property>		
+		<effect_group tiered="false">
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkToolTimeDamageIncrease" level="-1"/>
+			<!-- <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/> -->
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkToolTimeComplete" level="-1">
+				<requirement name="PerksUnlocked" skill_name="skillToolTime" operation="GTE" value="7"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="PlaySound" sound="read_skillbook_final" play_in_head="true">
+				<requirement name="PerksUnlocked" skill_name="skillToolTime" operation="GTE" value="7"/></triggered_effect>
+		</effect_group>
+	</item>
+	<item name="bookToolTimeKnockoutSwing"> 
+		<property name="Extends" value="bookFiremansAlmanacHeat"/>
+		<!-- <property name="CustomIconTint" value="81, 17, 11"/> -->
+		<property name="CustomIcon" value="toolTimeMagFireAxe"/>
+		
+		<property name="DescriptionKey" value="perkToolTimeKnockoutSwingLongDesc"/>
+		<property name="Unlocks" value="perkToolTimeKnockoutSwing"/>
+		<property name="Tags" value="repairingSkill"/>
+		<property name="Group" value="Books,BooksOnly,TCReading"/>
+			<property class="Action0">
+				<property name="Create_item" value="bookToolTimeKnockoutSwing"/>
+			</property>		
+		<effect_group tiered="false">
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkToolTimeKnockoutSwing" level="-1"/>
+			<!-- <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/> -->
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkToolTimeComplete" level="-1">
+				<requirement name="PerksUnlocked" skill_name="skillToolTime" operation="GTE" value="7"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="PlaySound" sound="read_skillbook_final" play_in_head="true">
+				<requirement name="PerksUnlocked" skill_name="skillToolTime" operation="GTE" value="7"/></triggered_effect>
+		</effect_group>
+	</item>
+	<item name="bookToolTimeRecharge"> 
+		<property name="Extends" value="bookFiremansAlmanacHeat"/>
+		<!-- <property name="CustomIconTint" value="81, 17, 11"/> -->
+		<property name="CustomIcon" value="toolTimeMagImpDriver"/>
+		
+		<property name="DescriptionKey" value="perkToolTimeRechargeLongDesc"/>
+		<property name="Unlocks" value="perkToolTimeRecharge"/>
+		<property name="Tags" value="repairingSkill"/>
+		<property name="Group" value="Books,BooksOnly,TCReading"/>
+			<property class="Action0">
+				<property name="Create_item" value="bookToolTimeRecharge"/>
+			</property>		
+		<effect_group tiered="false">
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkToolTimeRecharge" level="-1"/>
+			<!-- <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/> -->
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkToolTimeComplete" level="-1">
+				<requirement name="PerksUnlocked" skill_name="skillToolTime" operation="GTE" value="7"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="PlaySound" sound="read_skillbook_final" play_in_head="true">
+				<requirement name="PerksUnlocked" skill_name="skillToolTime" operation="GTE" value="7"/></triggered_effect>
+		</effect_group>
+	</item>
+	<item name="bookToolTimeRange"> 
+		<property name="Extends" value="bookFiremansAlmanacHeat"/>
+		<!-- <property name="CustomIconTint" value="81, 17, 11"/> -->
+		<property name="CustomIcon" value="toolTimeMagShovel"/>
+		
+		<property name="DescriptionKey" value="perkToolTimeRangeLongDesc"/>
+		<property name="Unlocks" value="perkToolTimeRange"/>
+		<property name="Tags" value="repairingSkill"/>
+		<property name="Group" value="Books,BooksOnly,TCReading"/>
+			<property class="Action0">
+				<property name="Create_item" value="bookToolTimeRange"/>
+			</property>		
+		<effect_group tiered="false">
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkToolTimeRange" level="-1"/>
+			<!-- <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/> -->
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkToolTimeComplete" level="-1">
+				<requirement name="PerksUnlocked" skill_name="skillToolTime" operation="GTE" value="7"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="PlaySound" sound="read_skillbook_final" play_in_head="true">
+				<requirement name="PerksUnlocked" skill_name="skillToolTime" operation="GTE" value="7"/></triggered_effect>
+		</effect_group>
+	</item>
+<!-- tests -->
+
+	<item name="bookToolTimeT3PoweredSledge"> 
+		<property name="Extends" value="bookFiremansAlmanacHeat"/>
+		<!-- <property name="CustomIconTint" value="81, 17, 11"/> -->
+		<property name="CustomIcon" value="toolTimeMagSaw"/>
+		
+		<property name="DescriptionKey" value="bookToolTimeT3PoweredSledgeLongDesc"/>
+		<property name="Unlocks" value="perkToolTimeT3PoweredSledge"/>
+		<property name="Tags" value="repairingSkill"/>
+		<property name="Group" value="Books,BooksOnly,TCReading"/>
+			<property class="Action0">
+				<property name="Create_item" value="bookToolTimeT3PoweredSledge"/>
+			</property>		
+		<effect_group tiered="false">
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkToolTimeT3PoweredSledge" level="-1"/>
+			<!-- <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/> -->
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkToolTimeComplete" level="-1">
+				<requirement name="PerksUnlocked" skill_name="skillToolTime" operation="GTE" value="7"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="PlaySound" sound="read_skillbook_final" play_in_head="true">
+				<requirement name="PerksUnlocked" skill_name="skillToolTime" operation="GTE" value="7"/></triggered_effect>
+		</effect_group>
+	</item>
+	
+	<item name="bookToolTimeShocker"> 
+		<property name="Extends" value="bookFiremansAlmanacHeat"/>
+		<!-- <property name="CustomIconTint" value="81, 17, 11"/> -->
+		<property name="CustomIcon" value="toolTimeMagSchematics"/>
+		
+		<property name="DescriptionKey" value="bookToolTimeShockerLongDesc"/>
+		<property name="Unlocks" value="perkToolTimeShocker"/>
+		<property name="Tags" value="repairingSkill"/>
+		<property name="Group" value="Books,BooksOnly,TCReading"/>
+			<property class="Action0">
+				<property name="Create_item" value="bookToolTimeShocker"/>
+			</property>		
+		<effect_group tiered="false">
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkToolTimeShocker" level="-1"/>
+			<!-- <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/> -->
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkToolTimeComplete" level="-1">
+				<requirement name="PerksUnlocked" skill_name="skillToolTime" operation="GTE" value="7"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="PlaySound" sound="read_skillbook_final" play_in_head="true">
+				<requirement name="PerksUnlocked" skill_name="skillToolTime" operation="GTE" value="7"/></triggered_effect>
+		</effect_group>
+	</item>
+	
+		<item name="bookToolTimeCompleteCollectionA">
+			<property name="Extends" value="bookFiremansAlmanacHeat"/>
+			<property name="CustomIcon" value="toolTimeMag"/>
+			<property name="CustomIconTint" value="81, 17, 11"/>
+			<property name="DescriptionKey" value="bookToolTimeCompleteCollectionALongDesc"/>
+			<property name="Unlocks" value="perkToolTimeComplete"/>	
+			<property class="Action0">
+				<property name="Create_item" value="bookToolTimeCompleteCollectionA"/>
+			</property>		
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkToolTimeDoubleStep" level="-1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkToolTimeDamageIncrease" level="-1"/> 
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkToolTimeKnockoutSwing" level="-1"/> 
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkToolTimeRecharge" level="-1"/> 
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkToolTimeRange" level="-1"/> 
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkToolTimeComplete" level="-1">
+					<requirement name="PerksUnlocked" skill_name="skillToolTime" operation="GTE" value="7"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="PlaySound" sound="read_skillbook_final" play_in_head="true">
+					<requirement name="PerksUnlocked" skill_name="skillToolTime" operation="GTE" value="7"/></triggered_effect>
+			</effect_group>
+		</item>
+	
+		<item name="bookToolTimeCompleteCollectionB">
+			<property name="Extends" value="bookFiremansAlmanacHeat"/>
+			<property name="CustomIcon" value="toolTimeMag"/>
+			<property name="CustomIconTint" value="81, 17, 180"/>
+			<property name="DescriptionKey" value="bookToolTimeCompleteCollectionBLongDesc"/>
+			<property name="Unlocks" value="perkToolTimeComplete"/>	
+			<property class="Action0">
+				<property name="Create_item" value="bookToolTimeCompleteCollectionB"/>
+			</property>		
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkToolTimeT3PoweredSledge" level="-1"/> 
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkToolTimeShocker" level="-1"/> 
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkToolTimeComplete" level="-1">
+					<requirement name="PerksUnlocked" skill_name="skillToolTime" operation="GTE" value="7"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="PlaySound" sound="read_skillbook_final" play_in_head="true">
+					<requirement name="PerksUnlocked" skill_name="skillToolTime" operation="GTE" value="7"/></triggered_effect>
+			</effect_group>
+		</item>
+	
+		<item name="bookToolTimeCompleteCollection">
+			<property name="Extends" value="bookFiremansAlmanacHeat"/>
+			<property name="CustomIcon" value="toolTimeMag"/>
+			<!-- <property name="CustomIconTint" value="81, 17, 11"/> -->
+			<property name="DescriptionKey" value="bookToolTimeCompleteCollectionLongDesc"/>
+			<property name="Unlocks" value="perkToolTimeComplete"/>	
+			<property class="Action0">
+				<property name="Create_item" value="bookToolTimeCompleteCollection"/>
+			</property>		
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkToolTimeDoubleStep" level="-1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkToolTimeDamageIncrease" level="-1"/> 
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkToolTimeKnockoutSwing" level="-1"/> 
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkToolTimeRecharge" level="-1"/> 
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkToolTimeRange" level="-1"/> 
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkToolTimeT3PoweredSledge" level="-1"/> 
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkToolTimeShocker" level="-1"/> 
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="perkToolTimeComplete" level="-1">
+					<requirement name="PerksUnlocked" skill_name="skillToolTime" operation="GTE" value="7"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="PlaySound" sound="read_skillbook_final" play_in_head="true">
+					<requirement name="PerksUnlocked" skill_name="skillToolTime" operation="GTE" value="7"/></triggered_effect>
+			</effect_group>
+		</item>
+		
+<item name="meleeWpnSledgeT3PoweredSledgehammer">
+
+	<property name="CreativeMode" value="Player"/>
+	<property name="CustomIcon" value="meleeWpnSledgeT3SteelSledgehammer"/><property name="CustomIconTint" value="ffb0b0"/>
+
+	<property name="Tags" value="blunt,melee,grunting,heavy,sledge,weapon,meleeWeapon,longShaft,attStrength,perkSkullCrusher,perkFlurryOfStrength,canHaveCosmetic,sledgeSkill,perkFlurryOfIntellect,attIntellect,perkElectrocutioner,roboticsSkill,meleeIntellect,perkDeepCuts,attAgility,perkToolTime"/>
+	<property name="DisplayType" value="meleeHeavy"/>
+	<property name="HoldType" value="33"/>
+	<property name="Meshfile" value="@:Other/Items/Weapons/Melee/SledgeHammer/steelSledgehammerPrefab.prefab"/>
+	<property name="Material" value="MmeleeWpnSledgeParts"/>
+	<property name="TintColor" value="60, 0, 0"/>
+	<property name="Weight" value="1"/>
+	<property name="ScrapTimeOverride" value="10.0"/>
+	<property name="RepairTools" value="resourceRepairKit"/>
+	<property name="DegradationBreaksAfter" value="false"/>
+	<property name="SoundJammed" value="ItemNeedsRepair"/>
+	<property name="SoundDestroy" value="metaldestroy1"/>
+	<property name="EconomicValue" value="1100"/>
+	<property name="TraderStageTemplate" value="baseTier2"/><!-- meleeWpnSledgeT3SteelSledgehammer -->
+	<property name="Group" value="Ammo/Weapons,Melee Weapons"/>
+	<property name="UnlockedBy" value="craftingSledgehammers"/><!-- meleeWpnSledgeT3SteelSledgehammerSchematic, -->
+	<property name="ShowQuality" value="true"/>
+	<property name="SoundUnholster" value="weapon_unholster"/>
+	<property name="SoundHolster" value="weapon_holster"/>
+	<property name="SoundPickup" value="sledgehammer_steel_grab"/>
+	<property name="SoundPlace" value="sledgehammer_steel_place"/>
+
+	<property class="Action0">
+		<property name="Class" value="DynamicMelee"/>
+		<property name="Sphere" value=".15"/> <!-- limit to 0.15, else the sphere cast can overlap the target already -->
+		<property name="Sound_start" value="sledge_swinglight"/>
+		<property name="ToolCategory.harvestingTools" value=".5" param1="1"/>
+		<property name="UseGrazingHits" value="true"/>
+		<property name="GrazeStart" value=".515"/>
+		<property name="GrazeEnd" value=".52"/>
+		<property name="SwingDegrees" value="65"/>
+		<property name="SwingAngle" value="160"/>
+		<property class="HitSounds">
+			<property name="Override0" value="organic" param1="metalsolidhitorganic"/>
+		</property>
+		<property class="GrazeSounds">
+			<property name="Override0" value="organic" param1="metalgrazeorganic"/>
+		</property>
+	</property>
+	<property class="Action1">
+		<property name="Class" value="DynamicMelee"/>
+		<property name="Sphere" value=".15"/> <!-- limit to 0.15, else the sphere cast can overlap the target already -->
+		<property name="Sound_start" value="sledge_swingheavy"/>
+		<property name="ToolCategory.harvestingTools" value=".5" param1="1"/>
+		<property name="UsePowerAttackAnimation" value="true"/>
+		<property name="UseGrazingHits" value="true"/>
+		<property name="GrazeStart" value=".515"/>
+		<property name="GrazeEnd" value=".52"/>
+		<property name="SwingDegrees" value="110"/>
+		<property name="SwingAngle" value="90"/>
+		<property class="HitSounds">
+			<property name="Override0" value="organic" param1="metalsolidhitorganic"/>
+		</property>
+		<property class="GrazeSounds">
+			<property name="Override0" value="organic" param1="metalgrazeorganic"/>
+		</property>
+	</property>
+	<effect_group name="meleeWpnSledgeT3PoweredSledgehammer">
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="36" tags="perkSkullCrusher,perkFlurryOfStrength,perkElectrocutioner,perkFlurryOfIntellect,perkDeepCuts,perkFlurryOfAgility,perkToolTime"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="52" tags="primary,perkToolTime"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="500,1800" tier="1,6" tags="perkSkullCrusher,perkElectrocutioner,perkDeepCuts,perkToolTime"/>
+		<passive_effect name="DegradationMax" operation="perc_add" value=".02,.2" tags="perkSkullCrusher,perkElectrocutioner,perkDeepCuts,perkToolTime"/> <!-- random DegradationMax -->
+		<passive_effect name="DegradationPerUse" operation="base_set" value="10" tags="perkSkullCrusher,perkElectrocutioner,perkDeepCuts,perkToolTime"/>
+		<passive_effect name="DegradationPerUse" operation="perc_add" value="-.1,-.3,-.5,-.7,-.9" tier="2,3,4,5,6" tags="perkSkullCrusher,perkElectrocutioner,perkDeepCuts,perkToolTime"/>
+		<passive_effect name="MaxRange" operation="base_set" value="2.6" tags="perkSkullCrusher,perkElectrocutioner,perkDeepCuts,perkToolTime"/>
+		<passive_effect name="BlockRange" operation="base_set" value="3.5" tags="perkSkullCrusher,perkElectrocutioner,perkDeepCuts,perkToolTime"/>
+		<passive_effect name="DismemberChance" operation="base_add" value=".23" tags="perkSkullCrusher,perkElectrocutioner,perkDeepCuts,primary,perkToolTime"/>
+		<passive_effect name="ModSlots" operation="base_set" value="3,3,4,4,5,6" tier="1,2,3,4,5,6"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".25" tags="EntityDamage,BlockDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="420" tags="EconomicValue"/>
+		<passive_effect name="EntityDamage" operation="base_set" value="55" tags="perkSkullCrusher,perkElectrocutioner,perkDeepCuts,perkToolTime"/> <!-- meleeWpnSledgeT3SteelSledgehammer -->
+		<passive_effect name="EntityDamage" operation="perc_add" value=".05,.1" tags="perkSkullCrusher,perkElectrocutioner,perkDeepCuts,perkToolTime"/> <!-- random EntityDmg -->
+		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkSkullCrusher,perkElectrocutioner,perkDeepCuts,perkToolTime"/> <!-- tier bonus -->
+		<passive_effect name="BlockDamage" operation="base_set" value="85" tags="perkSkullCrusher,perkElectrocutioner,perkDeepCut,perkToolTimes"/>
+		<passive_effect name="BlockDamage" operation="perc_add" value=".05,.1" tags="perkSkullCrusher,perkElectrocutioner,perkDeepCuts,perkToolTime"/> <!-- random BlockDmg -->
+		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkSkullCrusher,perkElectrocutioner,perkDeepCuts,perkToolTime"/> <!-- tier bonus -->
+		<passive_effect name="AttacksPerMinute" operation="base_add" value="-3,3" tags="perkSkullCrusher,perkFlurryOfStrength,perkElectrocutioner,perkFlurryOfIntellect,perkDeepCuts,perkFlurryOfAgility,perkToolTime"/> <!-- random AttacksPerMinute -->
+		<passive_effect name="AttacksPerMinute" operation="base_add" value="4,20" tier="2,6" tags="perkSkullCrusher,perkFlurryOfStrength,perkElectrocutioner,perkFlurryOfIntellect,perkDeepCuts,perkFlurryOfAgility,perkToolTime"/> <!-- tier bonus -->
+		<passive_effect name="StaminaLoss" operation="base_add" value="-3,3" tags="primary,perkSkullCrusher,perkElectrocutioner,perkDeepCuts,perkToolTime"/> <!-- random StaminaLoss -->
+		<passive_effect name="StaminaLoss" operation="base_add" value="-4,-20" tier="2,6" tags="primary,perkSkullCrusher,perkElectrocutioner,perkDeepCuts,perkToolTime"/> <!-- tier bonus -->
+		<passive_effect name="StaminaLoss" operation="perc_add" value="-.05,-.1" tags="primary,perkSkullCrusher,perkElectrocutioner,perkDeepCuts,perkToolTime"/> <!-- random StaminaLoss -->
+		<passive_effect name="StaminaLoss" operation="perc_add" value="-.05,-.2" tier="2,6" tags="primary,perkSkullCrusher,perkElectrocutioner,perkDeepCuts,perkToolTime"/> <!-- tier bonus -->
+		
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.9" tags="earth"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.6" tags="stone"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value=".1" tags="metal"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value=".25" tags="wood"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value=".5" tags="organic"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value=".75" tags="cloth,head"/>
+
+		<passive_effect name="HarvestCount" operation="base_set" value="1" tags="butcherHarvest"/>
+		<passive_effect name="HarvestCount" operation="base_set" value="1" tags="salvageHarvest"/>
+		<passive_effect name="HarvestCount" operation="base_add" value="-.5" tags="allHarvest"/>
+		<passive_effect name="HarvestCount" operation="base_add" value="-.5" tags="allToolsHarvest"/>
+		<passive_effect name="HarvestCount" operation="base_add" value="-.25" tags="oreWoodHarvest"/>		
+	</effect_group>
+	<effect_group name="Power Attack">
+		<passive_effect name="EntityDamage" operation="perc_add" value="2.42" tags="secondary,perkToolTime"/>
+		<passive_effect name="BlockDamage" operation="perc_add" value="2" tags="secondary,perkToolTime"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="81" tags="secondary,perkToolTime"/>
+		<passive_effect name="DismemberChance" operation="base_add" value=".42" tags="perkSkullCrusher,perkElectrocutioner,perkDeepCuts,secondary"/>
+	</effect_group>
+
+	
+	<effect_group name="sneak damage bonus">
+		<requirement name="CVarCompare" cvar="_crouching" operation="Equals" value="1"/>
+		<requirement name="CVarCompare" cvar="_notAlerted" operation="GT" value="0" target="other"/>
+			<passive_effect name="DamageBonus" operation="base_add" value="3"/>
+			<passive_effect name="EntityDamage" operation="perc_add" value="3" tags="perkDeepCuts"/>
+			<display_value name="dEntityDamageSneak" value="3"/>
+	</effect_group>
+	<effect_group name="standing sneak damage bonus">
+		<!-- <requirement name="CVarCompare" cvar="_crouching" operation="Equals" value="0"/> -->
+		<requirement name="CVarCompare" cvar="_notAlerted" operation="GT" value="0" target="other"/>
+			<passive_effect name="DamageBonus" operation="base_add" value="2"/>
+			<passive_effect name="EntityDamage" operation="perc_add" value="2" tags="perkDeepCuts"/>
+	</effect_group>
+	<effect_group name="apply damage buff, meleeWpnSledgeT3PoweredSledgehammer">
+		<requirement name="HasBuff" buff="buffToolTimeAutoRecharger"/>
+		<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="40"/>
+			<triggered_effect trigger="onSelfEquipStart" action="AddPart" part="Sparks" prefab="@:ItemModEffects/baton_electricityPrefab.prefab" parentTransform="Handle" localPos="0,0,0" localRot="0,0,0"/>
+
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" buff="buffShocked"/>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" buff="buffShocked"/>
+
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="otherAOE" range="1.3" target_tags="zombie,animal" buff="buffShocked">
+				<requirement name="HasBuff" buff="buffDrugNerdTats"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="otherAOE" range="1.7" target_tags="zombie,animal" buff="buffShocked">
+				<requirement name="HasBuff" buff="buffDrugNerdTats"/>
+			</triggered_effect>
+
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="RemovePart" part="Sparks"/>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="RemovePart" part="Sparks"/>
+
+			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" cvar=".stunBatonCharge" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" cvar=".stunBatonCharge" operation="set" value="0"/>
+
+			
+		<!-- set shock duration -->
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar="stunBatonDuration" operation="set" value="4">
+			<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="0"/>
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar="stunBatonDuration" operation="set" value="4.8">
+			<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="1"/>
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar="stunBatonDuration" operation="set" value="5.6">
+			<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="2"/>
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar="stunBatonDuration" operation="set" value="6.4">
+			<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="3"/>
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar="stunBatonDuration" operation="set" value="7.2">
+			<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="4"/>
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" target="other" cvar="stunBatonDuration" operation="set" value="8">
+			<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="5"/>
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/></triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar="stunBatonDuration" operation="set" value="4">
+			<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="0"/>
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/></triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar="stunBatonDuration" operation="set" value="4.8">
+			<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="1"/>
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/></triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar="stunBatonDuration" operation="set" value="5.6">
+			<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="2"/>
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/></triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar="stunBatonDuration" operation="set" value="6.4">
+			<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="3"/>
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/></triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar="stunBatonDuration" operation="set" value="7.2">
+			<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="4"/>
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/></triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar="stunBatonDuration" operation="set" value="8">
+			<requirement name="ProgressionLevel" progression_name="perkElectrocutioner" operation="Equals" value="5"/>
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/></triggered_effect>
+
+			
+	</effect_group>
+
+
+<!-- needed? -->
+			<!-- <requirement name="ItemHasTags" tags="perkElectrocutioner"/> -->
+
+			<!-- <requirement name="EntityTagCompare" target="other" tags="human,zombie,animal"/> -->
+
+
+	<effect_group name="increase charges">
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" cvar=".stunBatonCharge" operation="add" value="2">
+			<requirement name="IsAlive" target="other"/>
+			<requirement name="!EntityTagCompare" target="other" tags="trader"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" cvar=".stunBatonCharge" operation="add" value="3">
+			<requirement name="IsAlive" target="other"/>
+			<requirement name="!EntityTagCompare" target="other" tags="trader"/>
+		</triggered_effect>
+
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="ModifyCVar" cvar=".stunBatonCharge" operation="add" value="4">
+			<requirement name="ProgressionLevel" progression_name="perkTechJunkie6BatonCharge" operation="Equals" value="1"/>
+			<requirement name="IsAlive" target="other"/>
+			<requirement name="!EntityTagCompare" target="other" tags="trader"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="42"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" cvar=".stunBatonCharge" operation="add" value="4">
+			<requirement name="ProgressionLevel" progression_name="perkTechJunkie6BatonCharge" operation="Equals" value="1"/>
+			<requirement name="IsAlive" target="other"/>
+			<requirement name="!EntityTagCompare" target="other" tags="trader"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="60"/>
+		</triggered_effect>
+
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddPart" part="Sparks" prefab="@:ParticleEffects/p_electric_shock_small.prefab" parentTransform="Handle" localPos="0,0,0" localRot="0,0,0">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="LT" value="40"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddPart" part="Sparks" prefab="@:ParticleEffects/p_electric_shock_small.prefab" parentTransform="Handle" localPos="0,0,0" localRot="0,0,0">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="LT" value="40"/>
+		</triggered_effect>
+
+		<!-- the attack that applies the last +1 charge can not immediately trigger the effect -->
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".stunBatonCharge" operation="set" value="40">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" cvar=".stunBatonCharge" operation="set" value="40">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+		</triggered_effect>
+		
+		<!-- trigger ragdoll events for fully charged baton -->
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="Ragdoll" target="other" duration="@stunBatonDuration" force="350">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+			<requirement name="HasBuff" buff="buffmodMeleeStunBatonRepulsor"/>
+			<requirement name="!EntityTagCompare" target="other" tags="trader"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="Ragdoll" target="other" duration="@stunBatonDuration" force="350">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+			<requirement name="HasBuff" buff="buffmodMeleeStunBatonRepulsor"/>
+			<requirement name="!EntityTagCompare" target="other" tags="trader"/>
+		</triggered_effect>
+		
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="Ragdoll" target="otherAOE" range="1.1" duration="2.5" force="350" target_tags="zombie,animal">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+			<requirement name="HasBuff" buff="buffmodMeleeStunBatonRepulsor"/>
+			<requirement name="!HasBuff" buff="buffDrugNerdTats"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="Ragdoll" target="otherAOE" range="1.3" duration="2.5" force="350" target_tags="zombie,animal">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+			<requirement name="HasBuff" buff="buffmodMeleeStunBatonRepulsor"/>
+			<requirement name="!HasBuff" buff="buffDrugNerdTats"/>
+		</triggered_effect>
+		
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="Ragdoll" target="otherAOE" range="1.1" duration="@stunBatonDuration" force="350" target_tags="zombie,animal">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+			<requirement name="HasBuff" buff="buffmodMeleeStunBatonRepulsor"/>
+			<requirement name="HasBuff" buff="buffDrugNerdTats"/> <!-- if you have buffDrugNerdTats, use stun duration so zombies get up after stun is finished -->
+		</triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="Ragdoll" target="otherAOE" range="1.3" duration="@stunBatonDuration" force="350" target_tags="zombie,animal">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+			<requirement name="HasBuff" buff="buffmodMeleeStunBatonRepulsor"/>
+			<requirement name="HasBuff" buff="buffDrugNerdTats"/> <!-- if you have buffDrugNerdTats, use stun duration so zombies get up after stun is finished -->
+		</triggered_effect>
+		
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="Ragdoll" target="other" duration="@stunBatonDuration" force="350">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+			<requirement name="HasBuff" buff="buffToolTimeAutoRecharger"/>
+			<requirement name="!EntityTagCompare" target="other" tags="trader"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="Ragdoll" target="other" duration="@stunBatonDuration" force="350">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+			<requirement name="HasBuff" buff="buffToolTimeAutoRecharger"/>
+			<requirement name="!EntityTagCompare" target="other" tags="trader"/>
+		</triggered_effect>
+		
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="Ragdoll" target="otherAOE" range="1.1" duration="2.5" force="350" target_tags="zombie,animal">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+			<requirement name="HasBuff" buff="buffToolTimeAutoRecharger"/>
+			<requirement name="!HasBuff" buff="buffDrugNerdTats"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="Ragdoll" target="otherAOE" range="1.3" duration="2.5" force="350" target_tags="zombie,animal">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+			<requirement name="HasBuff" buff="buffToolTimeAutoRecharger"/>
+			<requirement name="!HasBuff" buff="buffDrugNerdTats"/>
+		</triggered_effect>
+		
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="Ragdoll" target="otherAOE" range="1.1" duration="@stunBatonDuration" force="350" target_tags="zombie,animal">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+			<requirement name="HasBuff" buff="buffToolTimeAutoRecharger"/>
+			<requirement name="HasBuff" buff="buffDrugNerdTats"/> <!-- if you have buffDrugNerdTats, use stun duration so zombies get up after stun is finished -->
+		</triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="Ragdoll" target="otherAOE" range="1.3" duration="@stunBatonDuration" force="350" target_tags="zombie,animal">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/>
+			<requirement name="HasBuff" buff="buffToolTimeAutoRecharger"/>
+			<requirement name="HasBuff" buff="buffDrugNerdTats"/> <!-- if you have buffDrugNerdTats, use stun duration so zombies get up after stun is finished -->
+		</triggered_effect>
+		
+
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="PlaySound" sound="stunbaton_hit1">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="0"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="PlaySound" sound="stunbaton_hit2">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="1"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="PlaySound" sound="stunbaton_hit3">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="2"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="PlaySound" sound="stunbaton_hit4">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="3"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionRayHit" action="PlaySound" sound="stunbaton_hit5">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/></triggered_effect>
+
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="PlaySound" sound="stunbaton_hit1">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="0"/></triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="PlaySound" sound="stunbaton_hit2">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="1"/></triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="PlaySound" sound="stunbaton_hit3">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="2"/></triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="PlaySound" sound="stunbaton_hit4">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="3"/></triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="PlaySound" sound="stunbaton_hit5">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="GTE" value="4"/></triggered_effect>
+
+		<triggered_effect trigger="onSelfAttackedOther" action="PlaySound" sound="stunbaton_hit5">
+			<requirement name="CVarCompare" cvar=".stunBatonCharge" operation="Equals" value="5"/>
+		</triggered_effect>
+	</effect_group>
+
+
+</item>
+</append>
+
+
+
+</configs>

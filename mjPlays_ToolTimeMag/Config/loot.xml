@@ -1,0 +1,15 @@
+<configs>
+<append xpath="/lootcontainers/lootgroup[@name='perkBooks']">
+	<item name="bookToolTimeDoubleStep"/>
+	<item name="bookToolTimeDamageIncrease"/>
+	<item name="bookToolTimeKnockoutSwing"/>
+	<item name="bookToolTimeRecharge"/>
+	<item name="bookToolTimeRange"/>
+	<item name="bookToolTimeT3PoweredSledge"/>
+	<item name="bookToolTimeShocker"/>
+</append>
+
+
+
+
+</configs>

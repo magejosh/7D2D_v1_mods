@@ -1,0 +1,87 @@
+Key,English,Japanese
+
+
+--------------Items----------------
+bookToolTimeDoubleStep,"[fa4d43]Tool Time: Double Step[-]","[fa4d43]Japanese[-]"
+bookToolTimeDamageIncrease,"[fa4d43]Tool Time: Tool Fighter[-]","[fa4d43]Japanese[-]"
+bookToolTimeKnockoutSwing,"[fa4d43]Tool Time: Knockout Swing[-]","[fa4d43]Japanese[-]"
+bookToolTimeRecharge,"[fa4d43]Tool Time: Recharge & Recover[-]","[fa4d43]Japanese[-]"
+bookToolTimeRange,"[fa4d43]Tool Time: Reach Technique[-]","[fa4d43]Japanese[-]"
+bookToolTimeT3PoweredSledge,"[fa4d43]Tool Time: Powered Sledgehammer Mk1[-]","[fa4d43]Japanese[-]"
+bookToolTimeShocker,"[fa4d43]Tool Time: Shocker Mod[-]","[fa4d43]Japanese[-]"
+bookToolTimeCompleteCollectionA,"[fa4d43]Tool Time: Complete Collection[-], mostly.","[fa4d43]Japanese[-]"
+bookToolTimeCompleteCollectionB,"[fa4d43]Tool Time: Complete Collection[-], partly.","[fa4d43]Japanese[-]"
+bookToolTimeCompleteCollection,"[fa4d43]Tool Time: Complete Collection[-]","[fa4d43]Japanese[-]"
+
+--------------Perks----------------
+perkToolTimeDoubleStep,"[fa4d43]Tool Time: Double Step[-]","[fa4d43]Japanese[-]"
+perkToolTimeDamageIncrease,"[fa4d43]Tool Time: Tool Fighter[-]","[fa4d43]Japanese[-]"
+perkToolTimeKnockoutSwing,"[fa4d43]Tool Time: Knockout Swing[-]","[fa4d43]Japanese[-]"
+perkToolTimeRecharge,"[fa4d43]Tool Time: Recharge & Recover[-]","[fa4d43]Japanese[-]"
+perkToolTimeRange,"[fa4d43]Tool Time: Reach Technique[-]","[fa4d43]Japanese[-]"
+perkToolTimeT3PoweredSledge,"[fa4d43]Tool Time: Powered Sledgehammer Mk1[-]","[fa4d43]Japanese[-]"
+perkToolTimeShocker,"[fa4d43]Tool Time: Shocker Mod[-]","[fa4d43]Japanese[-]"
+
+perkToolTimeName,"[fa4d43]Tool Time[-]","[fa4d43]Japanese[-]"
+perkToolTimeDesc,"Learn how to fight with tools and improve your harvesting ability with these books, even improves harvesting while using a sledgehammer. Each book in the series slightly improves your combat skills with tools and harvesting with sledgehammers which now count as tools.\nBooks 6 & 7 will increase your tool fighting XP and also increase your chances of finding the other books in the series as well as workstations, traps, robotics, and repair tools crafting books.","[fa4d43]Japanese[-]"
+
+perkToolTimeDoubleStepLongDesc,"While holding a tool, you have 15% additional movement speed. And reading this book unlocks a 15% bonus to Harvesting, even with a sledgehammer, [fa4d43]which stacks again for each other book in the series you read.[-]","[fa4d43]Japanese[-]"
+perkToolTimeDoubleStepDesc,"[fa4d43]Double Step[-]","[fa4d43]Japanese[-]"
+
+perkToolTimeDamageIncreaseLongDesc,"Victims of your tool attacks increase nearby ally damage by 30% for 2 seconds. You learn how to find Tim's Dirty Tool Fighting Techniques hidden in each edition of Tool Time as well, which increases your entity and block damage while holding tools and sledgehammers that [fa4d43]scales with each book of the series you read in addition to this one.[-]","[fa4d43]Japanese[-]"
+perkToolTimeDamageIncreaseDesc,"[fa4d43]Tool Fighter[-]","[fa4d43]Japanese[-]"
+
+perkToolTimeKnockoutSwingLongDesc,"You learn new techniques for footwork, grips, swings, and fighting stance to give you more power in your strikes with tools. Swinging a tool at an enemy has a [fa4d43]60% chance of knocking them down.[-]","[fa4d43]Japanese[-]"
+perkToolTimeKnockoutSwingDesc,"[fa4d43]Knockout Swing[-]","[fa4d43]Japanese[-]"
+
+perkToolTimeRechargeLongDesc,"Any long term worker skilled with tools has worked enough overtime to have learned tricks to recover stamina from proper rhythm to their actions. Don't work too fast and you will never run out of stamina. [fa4d43]Each book you read in the series in addition to this one increases this bonus.[-]\nImproved Skill with stun weapons thanks to your knowledge of tools and how to use them right allowing you to tinker with them to optimize their capacity. Using an electric charge has a 20% chance to recharge your stun instantly.","[fa4d43]Japanese[-]"
+perkToolTimeRechargeDesc,"[fa4d43]Recharge & Recover[-]","[fa4d43]Japanese[-]"
+
+perkToolTimeRangeLongDesc,"Your tool attacks have 2 meters increased range. In addition, increased skill with tools allows your use of [fa4d43]Junk Turrets[-] one additional active turret and an additional 10 blocks range active distance.","[fa4d43]Japanese[-]"
+perkToolTimeRangeDesc,"[fa4d43]Reach Technique[-]","[fa4d43]Japanese[-]"
+
+bookToolTimeT3PoweredSledgeLongDesc,"An old copy of Tool Time Powersaws, with a schematic hidden inside for [fa4d43]The Powered Sledgehammer Mark 1.[-] Reading this will unlock the recipe.","[fa4d43]Japanese[-]"
+bookToolTimeT3PoweredSledgeDesc,"[fa4d43]Powered Sledgehammer Mk1[-]","[fa4d43]Japanese[-]"
+
+meleeWpnSledgeT3PoweredSledgehammerDesc,"The [fa4d43]Powered Sledgehammer Mark 1[-] is a superior sledgehammer prototype unit under limited release by Binford Tools a year before the apocalypse and sold exclusively at S-Mart. It comes with a built-in plasma arc reactor that can be used with the Shocker Mod upgrade to allow it a faster charge capacity than the normal stun batons as well as greater strength from carbon fiber and titanium reinforcement. On top of that it has built-in gyroscopes and AI-Enabled NPU's to allow cross-skill assistance when weilding it. Allows Stun Repulsor Mod and Nerd Tats buffs.\nIf you have levels in Electrocutioner, Deep Cuts, or Skullcrusher you will find yourself with the ability to cause maximum damage with this technological nightmare of melee combat. [fa4d43]Remember, shop smart, Shop S-Mart.[-]","[fa4d43]Japanese[-]"
+meleeWpnSledgeT3PoweredSledgehammer,"[fa4d43]Powered Sledgehammer Mk1[-]","[fa4d43]Japanese[-]"
+
+perkToolTimeT3PoweredSledgeLongDesc,"The [fa4d43]Powered Sledgehammer Mark 1[-] is a superior sledgehammer prototype unit under limited release by Binford Tools a year before the apocalypse and sold exclusively at S-Mart. It comes with a built-in plasma arc reactor that can be used with the Shocker Mod upgrade to allow it a faster charge capacity than the normal stun batons as well as greater strength from carbon fiber and titanium reinforcement. On top of that it has built-in gyroscopes and AI-Enabled NPU's to allow cross-skill assistance when weilding it.\nIf you have levels in Electrocutioner, Deep Cuts, or Skullcrusher you will find yourself with the ability to cause maximum damage with this technological nightmare of melee combat.\n[fa4d43]Remember, shop smart, Shop S-Mart.[-]","[fa4d43]Japanese[-]"
+perkToolTimeT3PoweredSledgeDesc,"[fa4d43]Powered Sledgehammer Mk1[-]","[fa4d43]Japanese[-]"
+
+bookToolTimeShockerLongDesc,"[fa4d43]Shocker Mod[-] for the [fa4d43]Powered Sledgehammer Mk1[-] weapon. Will automatically recharge the stun from just holding the [fa4d43]Powered Sledgehammer Mk1[-] with this mod installed.The stun becomes overcharged from this units installation, allowing it to operate at a higher current output consistently, which leads to living tissues catching fire from contact.\n[fa4d43]Don't Touch it.[-]","[fa4d43]Japanese[-]"
+bookToolTimeShockerDesc,"[fa4d43]Shocker Mod[-]","[fa4d43]Japanese[-]"
+
+bookToolTimeCompleteCollectionALongDesc,"Unlocks the full set abilities of [fa4d43]Tool Time Complete Book Series[-]  and returns to your inventory as a read copy. Requires you have read the others books missing from this collection for full set unlock.","[fa4d43]Japanese[-]"
+bookToolTimeCompleteCollectionADesc,"[fa4d43]Tool Time Complete Collection[-], mostly.","[fa4d43]Japanese[-]"
+
+bookToolTimeCompleteCollectionBLongDesc,"Unlocks the full set abilities of [fa4d43]Tool Time Complete Book Series[-]  and returns to your inventory as a read copy. Requires you have read the others books missing from this collection for full set unlock.","[fa4d43]Japanese[-]"
+bookToolTimeCompleteCollectionBDesc,"[fa4d43]Tool Time Complete Collection[-], partly.","[fa4d43]Japanese[-]"
+
+bookToolTimeCompleteCollectionLongDesc,"Unlocks the full set abilities of [fa4d43]Tool Time Complete Book Series[-]  and returns to your inventory as a read copy","[fa4d43]Japanese[-]"
+bookToolTimeCompleteCollectionDesc,"[fa4d43]Tool Time Complete Collection[-]","[fa4d43]Japanese[-]"
+
+perkToolTimeShockerLongDesc,"[fa4d43]Shocker Mod[-] for the [fa4d43]Powered Sledgehammer Mk1[-] weapon. Will automatically recharge the stun from just holding the Powered Sledgehammer with this mod installed.The stun becomes overcharged from this units installation, allowing it to operate at a higher current output consistently, which leads to living tissues catching fire from contact. [fa4d43]Don't Touch it.[-]","[fa4d43]Japanese[-]"
+perkToolTimeShockerDesc,"[fa4d43]Shocker Mod[-]","[fa4d43]Japanese[-]"
+
+modMeleeSledgeShockerLongDesc,"[fa4d43]Shocker Mod[-] for the stun baton class of weapons. Will automatically recharge the stun from just holding the baton with this mod installed.The stun becomes overcharged from this units installation, allowing it to operate at a higher current output consistently, which leads to living tissues catching fire from contact more often than not. [fa4d43]Don't Touch it.[-]","[fa4d43]Japanese[-]"
+modMeleeSledgeShockerDesc,"[fa4d43]Shocker Mod[-] for the stun baton class of weapons. Will automatically recharge the stun from just holding the baton with this mod installed.The stun becomes overcharged from this units installation, allowing it to operate at a higher current output consistently, which leads to living tissues catching fire from contact more often than not.\n[fa4d43]Don't Touch it.[-]","[fa4d43]Japanese[-]"
+modMeleeSledgeShocker,"[fa4d43]Shocker Mod[-]","[fa4d43]Japanese[-]"
+
+perkToolTimeCompleteLongDesc,"Using a tool to attack will temporarily weaken melee attacks from the target and cause them damage over time if they move. Harvesting will see an increase as a series completion bonus.\nIn addition, increased skill with tools allows your use of [fa4d43]Junk Turrets[-] one additional active turret and an additional 10 blocks range active distance.","[fa4d43]Japanese[-]"
+perkToolTimeCompleteDesc,"[fa4d43]Mastery: Tool Man[-]","[fa4d43]Japanese[-]"
+
+
+------------Buffs---------------------
+buffToolTimeDamageIncreasePlayerName,"[fa4d43]Tool Fighter Skill[-]","[fa4d43]Japanese[-]"
+buffToolTimeDamageIncreasePlayerDesc,"[fa4d43]30% increased damage for 2 seconds.[-]","[fa4d43]Japanese[-]"
+------------Buffs---------------------
+buffToolTimeSledgeHarvest,"[fa4d43]Tool Harvest Bonus[-]","[fa4d43]Japanese[-]"
+buffToolTimeSledgeHarvestDesc,"[fa4d43]30% increased harvest count.[-]","[fa4d43]Japanese[-]"
+------------Buffs---------------------
+buffToolTimeSledgeHarvestX2,"[fa4d43]Tool Harvest Bonus X2[-]","[fa4d43]Japanese[-]"
+buffToolTimeSledgeHarvestX2Desc,"[fa4d43]60% increased harvest count.[-]","[fa4d43]Japanese[-]"
+
+
+
+

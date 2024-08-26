@@ -1,0 +1,111 @@
+<configs>
+
+	<append xpath="/item_modifiers">
+	
+	<item_modifier name="modMeleeSledgeShocker" installable_tags="perkToolTime" modifier_tags="fire" blocked_tags="noMods" icon="modMeleeStunBatonRepulsor" icon_color="42,0,117" type="attachment">
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+		<property name="CustomIcon" value="modMeleeStunBatonRepulsor"/><property name="CustomIconTint" value="fa4d43"/>
+		<property name="UnlockedBy" value="perkToolTimeShocker"/>
+		<property name="TraderStageTemplate" value="modsTier2"/>
+
+		<effect_group tiered="false">
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffToolTimeAutoRecharger"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffToolTimeAutoRecharger"/>
+		</effect_group>
+		<item_property_overrides name="*">
+			<property name="LightValue" value=".25"/> <!-- has no effect on a mod -->
+			<property name="LightSource" value="lightSource"/>
+			<property name="ActivateObject" value="lightSource"/>
+			<property name="AlwaysActive" value="true"/>
+			<property name="FlameEffect" value="@:ItemModEffects/mod_flame_defaultPrefab.prefab"/>
+			<property name="MatEmission" value="1"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="meleeWpnSledgeT3PoweredSledgehammer">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_sledge_flamePrefab.prefab"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="meleeWpnSledgeT3SteelSledgehammer">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_sledge_flamePrefab.prefab"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="meleeToolRepairT1ClawHammer">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_hammer_firePrefab.prefab"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="meleeWpnSledgeT1IronSledgehammer">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_sledge_flamePrefab.prefab"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="meleeWpnSledgeT0StoneSledgehammer">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_stone_sledge_flamePrefab.prefab"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="meleeToolRepairT1ClawHammer">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_sledge_flamePrefab.prefab"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="meleeToolRepairT0StoneAxe">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_stone_axe_flamePrefab.prefab"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="meleeToolAxeT1IronFireaxe">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_fireaxe_flamePrefab.prefab"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="meleeToolAxeT2SteelAxe">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_steel_axe_flamePrefab.prefab"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="gunBotT1JunkSledge">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_junk_sledge_flamePrefab.prefab"/>
+		</item_property_overrides>
+
+
+		<effect_group tiered="false" name="SpecialEffects">
+			<passive_effect name="StaminaLoss" operation="perc_add" value="-.1" tags="primary,secondary"/>
+			<passive_effect name="LightMultiplier" operation="base_add" value=".28"/>
+			<passive_effect name="HypothermalResist" operation="base_add" value="4">
+				<requirement name="CVarCompare" cvar="_underwater" operation="LT" value="1"/>
+			</passive_effect>
+		</effect_group>
+
+		<effect_group name="light/douse torch always" tiered="false">
+			<triggered_effect trigger="onSelfWaterSurface" action="AddPart" part="Flames" prefab="property?FlameEffect" parentTransform="#HeldItemRoot"/>
+			<triggered_effect trigger="onSelfWaterSubmerge" action="RemovePart" part="Flames"/>
+			<triggered_effect trigger="onSelfEquipStop" action="RemovePart" part="Flames"/>
+			<triggered_effect trigger="onSelfDied" action="RemovePart" part="Flames"/>
+		</effect_group>
+
+		<effect_group name="light torch" tiered="false">
+			<requirement name="CVarCompare" cvar="_underwater" operation="LT" value="1"/>
+				<triggered_effect trigger="onSelfEquipStart" action="AddPart" part="Flames" prefab="property?FlameEffect" parentTransform="#HeldItemRoot"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AddPart" part="Flames" prefab="property?FlameEffect" parentTransform="#HeldItemRoot"/>
+				<triggered_effect trigger="onSelfHoldingItemThrown" action="AddPart" part="Flames" prefab="property?FlameEffect" parentTransform="#HeldItemRoot"/>
+				<triggered_effect trigger="onSelfHoldingItemThrown" action="AttachPrefabToHeldItem" prefab="property?FlameEffect"/>
+				<triggered_effect trigger="onSelfSwimStop" action="AddPart" part="Flames" prefab="property?FlameEffect" parentTransform="#HeldItemRoot"/>
+		</effect_group>
+
+		<effect_group name="new Fire Proc" tiered="false">
+			<requirement name="CVarCompare" cvar="_underwater" operation="LT" value=".93"/>
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="30"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffBurningElement"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="$buffBurningElementDuration" operation="set" value="10">
+					<requirement name="ProgressionLevel" progression_name="perkFiremansAlmanacMolotov" operation="Equals" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="$buffBurningElementDuration" operation="set" value="11">
+					<requirement name="ProgressionLevel" progression_name="perkFiremansAlmanacMolotov" operation="Equals" value="1"/></triggered_effect>
+		</effect_group>
+
+		<effect_group name="always refresh existing Fire Proc" tiered="false">
+			<requirement name="CVarCompare" cvar="_underwater" operation="LT" value=".93"/>
+			<requirement name="HasBuff" target="other" buff="buffBurningElement"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffBurningElement"/>
+				<!--default duration is 10-->
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="$buffBurningElementDuration" operation="set" value="13">
+					<requirement name="ProgressionLevel" progression_name="perkFiremansAlmanacMolotov" operation="Equals" value="1"/></triggered_effect>
+		</effect_group>
+	</item_modifier>		
+	
+	</append>
+
+</configs>
