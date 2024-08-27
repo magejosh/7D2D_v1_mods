@@ -66,6 +66,11 @@ It is safe to install only on the server, but your book's icons will be missing.
 
 ## Changelog
 
+**1.0.0.3**
+- Fixed a couple wrong name keys in buffs that called them sprained arms and used the critical icon.
+- Fixed wrong tags on the perk points where the sledgehammer bonus harvest was applying to all tools instead of just the sledgehammer.
+- Added a fix to remove the sledgehammer harvest buff when you change items in hand, so it won't linger any longer like before. This was causing it to persist past when it should have and allow compounding interested when combined with other harvest tool perks.
+
 **1.0.0.2**
 - Adjusted Block Damage bonus for tools, as well as Harvest Bonus for tools. Read adjusted to mean reduced. This is as per user requests on Nexus. I can always reset them in my overhaul so no need to keep the vanilla friendly modlet version the same.
 - Removed XP gain from reading the books, so they can maintain their ability to read and then share with friends.

@@ -4,7 +4,7 @@
 	<book_group name="skillToolTime" parent="attBooks" name_key="perkToolTimeName" desc_key="perkToolTimeDesc" long_desc_key="perkBookGroupLongDesc" icon="ui_game_symbol_hammer">
 
 		<effect_group>
-			<requirement name="ItemHasTags" tags="perkToolTime"/>
+			<requirement name="HoldingItemHasTags" tags="perkSkullCrusher"/>
 			<requirement name="PerksUnlocked" skill_name="skillToolTime" operation="GTE" value="1"/>
 			<requirement name="PerksUnlocked" skill_name="skillToolTime" operation="LT" value="7"/>
 			<requirement name="ProgressionLevel" progression_name="perkToolTimeDoubleStep" operation="Equals" value="1"/>
@@ -406,7 +406,7 @@
 		</effect_group> -->
 
 		<effect_group>
-			<requirement name="ItemHasTags" tags="perkToolTime"/>
+			<requirement name="HoldingItemHasTags" tags="perkSkullCrusher"/>
 			<requirement name="ProgressionLevel" progression_name="perkToolTimeComplete" operation="Equals" value="1"/>
 				<triggered_effect trigger="onSelfProgressionUpdate" level="1" action="AddBuff" buff="buffToolTimeSledgeHarvestX2"/>
 				<!-- <triggered_effect trigger="onSelfSecondaryActionStart" level="1" action="AddBuff" buff="buffToolTimeSledgeHarvestX2"/> -->
