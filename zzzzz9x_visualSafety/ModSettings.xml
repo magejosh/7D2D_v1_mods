@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModSettings>
+  <Global>
+    <Tab name="VisualSafety" displayKey="VisualSafetyName" tooltipKey="VisualSafetyTip">
+      <Category name="playerVision" displayKey="mjSettingVSFX" tooltipKey="mjSettingVSFXtip">
+        <Switch name="ScreenFX" displayKey="screenFX" tooltipKey="screenFXtip" value="No" defaultValue="Yes" leftValue="No" rightValue="Yes" />
+      </Category>
+    </Tab>
+  </Global>
+  <World />
+</ModSettings>

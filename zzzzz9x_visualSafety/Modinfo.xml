@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+    <Name value="mj_visualSafety" />
+    <DisplayName value="magejosh visualSafety" />
+    <Description value="Enables you to disable screen effects from the main menu, requires gears mod by Laydor." />
+    <Author value="magejosh" />
+    <Version value="1.0.0.0" />
+    <Website value="https://mageworks.studio" />
+</xml>

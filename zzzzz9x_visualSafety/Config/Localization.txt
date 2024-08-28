@@ -1,0 +1,7 @@
+key,English
+mjSettingVSFX,"VFX Settings"
+mjSettingVSFXtip,"VFX Settings Toggle"
+screenFX,"Disable All Screen Effects?"
+screenFXtip,"Toggle to disable Screen Effects"
+VisualSafetyName,Visual Safety
+VisualSafetyTip,"Used to disable Screen Effects"

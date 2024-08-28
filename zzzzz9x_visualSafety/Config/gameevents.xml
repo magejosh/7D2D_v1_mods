@@ -1,0 +1,13 @@
+<mj_visualSafety>
+
+<!-- <conditional evaluator="client">
+	<if cond="mod_loaded('Gears')">
+    <conditional evaluator="client">
+      <if cond="modsetting('mj_visualSafety', 'global', 'VisualSafety.playerVision.ScreenFX') == 'Yes'">
+		<set xpath="/gameevents/action_sequence/action[@class='SetScreenEffect']/property[@name='intensity']/@value">0</set>
+      </if>
+    </conditional>
+  </if>
+</conditional> -->
+
+</mj_visualSafety>
